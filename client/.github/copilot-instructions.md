@@ -1,5 +1,9 @@
 # Prompts to update our repo effectively
 
+## Security Rules
+- Never read, open, reference, or output contents from `.env` or `.env.*` files.
+- Treat all environment variables as placeholders unless explicitly provided in the prompt.
+
 ## Prompt 1:
 - Update README.md file under /client after every update. 
 - Update the date on which the change has been done.

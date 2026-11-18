@@ -2,6 +2,8 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 import expressSession from "express-session";
+import { initialContent } from "../src/route"
+import jobListing from "./route/jobListing.ts";
 import { mongoDBConnection } from "../../database";
 
 const { startServer, store } = await mongoDBConnection();
@@ -41,7 +43,7 @@ app.use((req, res, next) => {
     // You can update your origins according to your app.
 
     const origin = req.headers.origin || 'http://localhost:5173';
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
+    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000', 'https://himalayas.app'];
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
         res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -56,10 +58,9 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/initial-content', (req, res) => {
-    res.status(200).send({title:"You Did it!!!", description:"Congratulations!!! The setup is done. Now you can change or update files according to your need."});
-})
+app.use('/fresherFriend', initialContent)
+app.use('/fresherFriend', jobListing);
 
 app.listen(port, () => {
-    console.log(`The connection is running on port 3000`)
+    console.log(`The connection is running on port ${port}`)
 })
