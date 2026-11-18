@@ -2,63 +2,30 @@
 
 This folder contains the frontend for the project. It is built with Vue, TypeScript, and Vite, and is responsible for rendering the UI and communicating with the backend API.
 
-## Folder structure
 
-```bash
-client/
-├── public/                     # Static assets served directly by Vite
-├── src/
-│   ├── assets/                # Shared static images, fonts, or icons
-│   ├── components/            # Reusable Vue components used across the app
-│   ├── composables/           # Reusable logic for data-fetching and state composition
-│   ├── router/                # Vue Router definitions and route configuration
-│   ├── stores/                # Pinia stores for shared reactive state
-│   ├── App.vue                # Main app layout and page structure
-│   ├── main.ts                # App bootstrap and plugin registration
-│   └── style.css              # Global styles and base styling
-├── index.html                 # HTML entry point for the app
-├── package.json               # Client dependencies and scripts
-├── tsconfig.json              # TypeScript config for the app
-├── tsconfig.app.json          # App-specific TypeScript config
-├── tsconfig.node.json         # TypeScript config for Node/Vite tooling
-├── vite.config.ts             # Vite configuration
-├── README.md                  # Documentation for the client app
-├── .env                       # Environment variables for the frontend
-├── .gitignore                 # Ignored files for Git
-└── .vscode/                   # Optional editor configuration
-```
+## Change log
 
-## Brief explanation
-
-- `public/`: Stores static files like images or icons that do not need processing.
-- `src/components/`: Keeps reusable Vue UI pieces used throughout the app.
-- `src/composables/`: Contains reusable logic such as API calls and shared state helpers.
-- `src/router/`: Defines app routes and navigation behavior.
-- `src/stores/`: Holds Pinia stores for centralized state management.
-- `src/App.vue`: The main Vue component that loads the app layout and page content.
-- `src/main.ts`: Starts the Vue app and registers the router and Pinia store.
-- `src/style.css`: Defines the global look and feel across the app.
-- `index.html`: The base HTML file used by Vite to launch the application.
-
-This structure keeps the frontend organized, making it easier to scale, maintain, and extend the client-side code.
-
-## Run the client app
-
-1. Open the client folder.
-2. Run the following command to start the Vite dev server, the dependencies will be installed automatically during inital setup:
-
-```bash
-npm run dev
-```
-
-> This command starts the Vite development server.
-
-## Environment variables
-
-Create or update the `.env` file in the client folder and set the backend URL key:
-
-```bash
-VITE_BACKEND_URL="http://localhost:3000"
-```
-
-This value tells the frontend where the Express server is running.
+- Updated: `index.html` - Show the info modal while the Vue app is bootstrapping. <Last Updated: 17/11/2026>
+- Updated: `src/components/modals/Info.vue` - Styled the text-only info modal with Tailwind classes. <Last Updated: 17/11/2026>
+- Updated: `src/App.vue` - Start initial content loading before the app's first render. <Last Updated: 17/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Test the loading modal message and absence of a close button. <Last Updated: 17/11/2026>
+- Added: `src/components/Tabs.vue` - Add responsive navigation tabs, the fresherFriend link, and a Saved Roles button with the saved count. <Last Updated: 17/11/2026>
+- Updated: `src/components/Portal.vue` - Render the tabs as the portal navigation. <Last Updated: 17/11/2026>
+- Added: `src/__tests__/Tabs.spec.ts` - Test navigation labels, destinations, icon, and initial saved count. <Last Updated: 17/11/2026>
+- Updated: `src/components/Tabs.vue` - Highlight Saved Roles with the primary color and contrasting text and count when active. <Last Updated: 17/11/2026>
+- Updated: `src/__tests__/Tabs.spec.ts` - Verify the Saved Roles active-state colors. <Last Updated: 17/11/2026>
+- Added: `src/components/Home.vue` - Add the All Roles home heading, description, search, and sort controls. <Last Updated: 17/11/2026>
+- Added: `src/components/SearchInput.vue` - Add a reusable search input with a Lucide search icon. <Last Updated: 17/11/2026>
+- Added: `src/components/SortSelector.vue` - Add a reusable selector with the configured sort options. <Last Updated: 17/11/2026>
+- Updated: `src/components/Portal.vue` - Render the Home page under the navigation tabs. <Last Updated: 17/11/2026>
+- Updated: `src/components/Tabs.vue` - Highlight All Roles while the Home route is active. <Last Updated: 17/11/2026>
+- Added: `src/__tests__/Home.spec.ts` - Test home content and search/sort controls. <Last Updated: 17/11/2026>
+- Added: `src/router/paths.ts` - Centralize the home and navigation route paths. <Last Updated: 18/11/2026>
+- Updated: `src/router/index.ts` - Register the home and existing navigation destinations. <Last Updated: 18/11/2026>
+- Updated: `src/App.vue` - Render the active route through RouterView. <Last Updated: 18/11/2026>
+- Updated: `src/components/Portal.vue` - Show Home only for the All Roles route. <Last Updated: 18/11/2026>
+- Updated: `src/components/Tabs.vue` - Use the shared route paths for navigation links. <Last Updated: 18/11/2026>
+- Added: `src/__tests__/Router.spec.ts` - Verify home and navigation routes are registered. <Last Updated: 18/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Normalize modal whitespace when checking the loading message. <Last Updated: 18/11/2026>
+- Updated: `src/views/Home.vue` - Keep the Home page in the views directory; `Portal.vue` imports it from there. <Last Updated: 18/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Import Home from its views directory location. <Last Updated: 18/11/2026>

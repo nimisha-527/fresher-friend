@@ -28,6 +28,6 @@ export const useApiHandling = defineStore('apiHandling', () => {
     data,
     apiLoadFn,
     apiErrorFn,
-    apiSuccessFn
+    apiSuccessFn,
   }
 })

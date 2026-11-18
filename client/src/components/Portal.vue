@@ -1,38 +1,19 @@
 <script setup lang="ts">
-  defineOptions({
-    name: 'PortalDisplay',
-  });
+import { useRoute } from 'vue-router'
+import Home from '../views/Home.vue'
+import Tabs from './Tabs.vue'
+import { routePaths } from '../router/paths'
 
-  import { useFresherFriendStore } from '../stores/fresherFriend';
-  const fresherFriend = useFresherFriendStore();
+defineOptions({
+  name: 'PortalDisplay',
+})
+
+const route = useRoute()
 </script>
 
 <template>
-  <div>
-    <h1>Posts: {{ fresherFriend.posts }}</h1>
-
-    <button class="btn-primary" type="button" @click="fresherFriend.increment">
-      Increment
-    </button>
+  <div class="min-h-screen bg-[#FAFAFA]">
+    <Tabs />
+    <Home v-if="route.path === routePaths.home" />
   </div>
 </template>
-
-<style scoped>
-.btn-primary {
-  cursor: pointer;
-  background-color: #0056b3;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-.btn-primary:hover {
-  background-color: #004085;
-}
-.btn-primary:active {
-  transform: scale(0.95); /* Shrinks the button slightly */
-  background-color: #00376f; /* Darkens the color further */
-}
-
-</style>
