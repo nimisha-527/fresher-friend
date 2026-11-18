@@ -2,46 +2,17 @@
 
 This folder contains the backend API for the project. It is built with Express, TypeScript, MongoDB, and session-based authentication support.
 
-## Folder structure
+# Change logs
 
-```bash
-server/
-├── src/
-│   └── index.ts              # Main Express server setup and routes
-├── .env                      # Environment variables for session config and PORT
-├── package.json              # Backend dependencies and scripts
-├── tsconfig.json             # TypeScript configuration
-├── README.md                 # Server documentation
-└── .gitignore                # Ignored files for Git
-```
-
-## Brief explanation
-
-- `src/index.ts`: Contains the Express app setup, MongoDB connection, session configuration, CORS handling, and API routes.
-- `.env`: Stores local environment values such as the database URL, port, and session secret.
-- `package.json`: Defines the backend scripts and dependencies needed to run the server.
-
-This structure keeps the backend clean and easy to extend as your app grows.
-
-## Run the server
-
-1. Open the server folder.
-2. Run the following command to start the backend, dependencies will be installed automatically during initial setup:
-
-```bash
-npm run start
-```
-
-> This command launches the server in development mode.
-
-## Environment variables
-
-Create or update the `.env` file in the server folder with the following keys:
-
-```bash
-SESSION_SECRET='your-secret'
-PORT='3000'
-```
-
-- `SESSION_SECRET`: Secret used for session encryption
-- `PORT`: Port the server listens on
+ - Updated: src/index.ts - using express routing <Last Updated: 18/11/2026>
+ - Added: routes/ - initial content API added <Last Updated: 18/11/2026>
+- Added: api-data/initialContent.json - initial content introduced <Last Updated: 18/11/2026>
+ - Added: src/controllers/jobListing.ts - Added the Himalayas jobs API controller with country, seniority, and page query handling <Last Updated: 18/11/2026>
+ - Added: src/route/jobListing.ts - Added the GET /fresherFriend/job-listing route <Last Updated: 18/11/2026>
+ - Updated: src/route/jobListing.ts - Also accept /fresherFriend/jobs-listing as an alias <Last Updated: 18/11/2026>
+ - Updated: src/index.ts - Mounted job listings under the /fresherFriend prefix <Last Updated: 18/11/2026>
+ - Updated: src/controllers/jobListing.ts - Use fixed country/sort/worldwide filters and forward employment_type, seniority, and page query parameters <Last Updated: 18/11/2026>
+ - Updated: src/route/jobListing.ts - Support both job-listing and jobs-listing paths <Last Updated: 18/11/2026>
+ - Updated: src/controllers/jobListing.ts - Remove the page query parameter <Last Updated: 18/11/2026>
+ - Updated: src/route/jobListing.ts - Keep only the /fresherFriend/jobs-listing endpoint <Last Updated: 18/11/2026>
+ - Updated: src/controllers/jobListing.ts - Restore optional page query validation and forwarding <Last Updated: 18/11/2026>
