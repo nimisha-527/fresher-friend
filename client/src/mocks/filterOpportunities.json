@@ -1,0 +1,7 @@
+{
+    "location": ["Bangalore", "Mumbai", "Delhi", "Remote India"],
+    "workMode": ["Remote", "On-site", "Hybrid"],
+    "parentCategories": ["Software", "Design", "Data", "Product Management"],
+    "minimumSalary": ["0-2 LPA", "2-4 LPA", "4-6 LPA", "6-8 LPA", "8-10 LPA", "10+ LPA"],
+    "roleType": ["All", "Internship", "Fresher"]
+}

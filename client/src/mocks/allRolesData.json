@@ -1,0 +1,73 @@
+{
+    "roles": [
+        {
+            "id": 1,
+            "title": "Software Engineer Intern",
+            "companyName": "TechCorp",
+            "companyLogo": "https://example.com/logos/techcorp.png",
+            "location": "Bangalore",
+            "roleType": "Internship",
+            "workMode": "Hybrid",
+            "type": "Internship",
+            "minSalary": "2.4 LPA",
+            "maxSalary": "3.5 LPA",
+            "salaryPeriod": "annual",
+            "description": "Work on cutting-edge technologies and contribute to real-world projects.",
+            "categories": [
+                "SAP-ESPP-Support-Consultant",
+                "SAP-Consultant",
+                "SAP-Support-Engineer",
+                "Sap-Functional-Consultant"
+            ],
+            "parentCategories": [
+                "Developer"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Frontend Developer",
+            "companyName": "WebSolutions",
+            "companyLogo": "https://example.com/logos/websolutions.png",
+            "location": "Remote India",
+            "workMode": "Remote",
+            "roleType": "Fresher",
+            "type": "Full-time",
+            "minSalary": "35,000/month",
+            "maxSalary": "50,000/month",
+            "salaryPeriod": "monthly",
+            "description": "Develop and maintain user interfaces for web applications.",
+            "categories": [
+                "Technical-Sourcer",
+                "Technical-Recruiter",
+                "IT-Recruiter",
+                "Talent-Acquisition-Specialist"
+            ],
+            "parentCategories": [
+                "Human Resources"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Data Analyst Intern",
+            "companyName": "DataInsights",
+            "companyLogo": "https://example.com/logos/datainsights.png",
+            "location": "Mumbai",
+            "roleType": "Internship",
+            "workMode": "On-site",
+            "type": "Internship",
+            "minSalary": null,
+            "maxSalary": null,
+            "salaryPeriod": "hourly",
+            "description": "Analyze data sets and generate actionable insights for business decisions.",
+            "categories": [
+                "Technical-Business-Analyst",
+                "Business-Analyst",
+                "Aml-Analyst",
+                "Financial-Crime-Business-Analyst"
+            ],
+            "parentCategories": [
+                "Data Science"
+            ]
+        }
+    ]
+}

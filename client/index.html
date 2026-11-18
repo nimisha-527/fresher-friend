@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style.css" rel="stylesheet">
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="fixed inset-0 z-[1000] grid place-items-center bg-black/45 p-6">
+        <section
+          class="w-full max-w-md rounded-lg border-t-4 border-[#FACC15] bg-white p-6 text-center text-[#111111] shadow-2xl"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="info-modal-message"
+        >
+          <p id="info-modal-message" class="leading-6">
+            Waking up the free server... this may take up to 60 seconds on the first load.
+          </p>
+        </section>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
