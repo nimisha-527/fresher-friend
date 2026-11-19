@@ -16,3 +16,7 @@ This folder contains the backend API for the project. It is built with Express, 
  - Updated: src/controllers/jobListing.ts - Remove the page query parameter <Last Updated: 18/11/2026>
  - Updated: src/route/jobListing.ts - Keep only the /fresherFriend/jobs-listing endpoint <Last Updated: 18/11/2026>
  - Updated: src/controllers/jobListing.ts - Restore optional page query validation and forwarding <Last Updated: 18/11/2026>
+  - Updated: src/controllers/jobListing.ts - Added new package for genai and importing it for testing <Last Updated: 18/11/2026>
+ - Updated: src/controllers/jobListing.ts - Await asynchronous Gemini job tagging before mapping results <Last Updated: 18/11/2026>
+ - Updated: src/controllers/jobListing.ts - Skip listings without complete Gemini classifications rather than dereferencing missing tags <Last Updated: 18/11/2026>
+ - Updated: src/controllers/jobListing.ts - Return Himalayas locationRestrictions as the response location array <Last Updated: 18/11/2026>
