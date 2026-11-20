@@ -29,3 +29,33 @@ This folder contains the frontend for the project. It is built with Vue, TypeScr
 - Updated: `src/__tests__/App.spec.ts` - Normalize modal whitespace when checking the loading message. <Last Updated: 18/11/2026>
 - Updated: `src/views/Home.vue` - Keep the Home page in the views directory; `Portal.vue` imports it from there. <Last Updated: 18/11/2026>
 - Updated: `src/__tests__/Home.spec.ts` - Import Home from its views directory location. <Last Updated: 18/11/2026>
+- Added: `src/components/JobCard.vue` - Render job details, IST expiry dates, salary ranges, save actions, and apply links. <Last Updated: 20/11/2026>
+- Added: `src/stores/savedRoles.ts` - Manage saved role IDs and the reactive saved roles count with Pinia. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Display up to 20 job cards from the job mock. <Last Updated: 20/11/2026>
+- Updated: `src/components/Tabs.vue` - Show the reactive saved roles count. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/allRolesData.json` - Include application links for job cards. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add card labels for apply dates, bookmarks, logos, and skills. <Last Updated: 20/11/2026>
+- Added: `src/__tests__/JobCard.spec.ts` - Test card details, IST expiry formatting, undisclosed salary, and equal salary endpoints. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Test the job card limit and saved-role toggling. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Tabs.spec.ts` - Test the displayed saved roles count. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Add responsive pagination using a 20-job page size. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add pagination navigation and page button labels. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Test the home-page pagination controls. <Last Updated: 20/11/2026>
+- Added: `src/composables/useJobListingApi.ts` - Load job listings from the API or local mock data according to `VITE_USE_MOCK`. <Last Updated: 20/11/2026>
+- Added: `src/stores/jobListings.ts` - Store job listing results, loading state, and request errors with Pinia. <Last Updated: 20/11/2026>
+- Added: `src/types/jobListing.ts` - Define the job listing response shape used by the API and cards. <Last Updated: 20/11/2026>
+- Updated: `src/App.vue` - Request job listings alongside initial content at app startup. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Render API/mock job data with loading and error states. <Last Updated: 20/11/2026>
+- Updated: `src/components/JobCard.vue` - Use the shared job listing type. <Last Updated: 20/11/2026>
+- Updated: `env.d.ts` - Declare the backend URL and mock-mode Vite variables. <Last Updated: 20/11/2026>
+- Added: `src/__tests__/useJobListingApi.spec.ts` - Test mock/API selection and request error state. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Verify initial content and job listings load during startup. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Seed and verify job listings through the Pinia store. <Last Updated: 20/11/2026>
+- Updated: `src/composables/useJobListingApi.ts` - Append a digits-only page query for pages above 1 and omit the default page 1 parameter. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Show 15 API-mode pages for the 300-post demo and fetch the selected page. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/useJobListingApi.spec.ts` - Verify page values are numeric and page 1 is omitted. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Verify the 15-page API-mode controls request the selected page. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Verify the startup jobs request uses the mounted server route. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Render the API response as the selected page instead of applying the global page offset twice. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Verify page 5 results render after the paged API response loads. <Last Updated: 20/11/2026>
+- Updated: `src/composables/useJobListingApi.ts` - Avoid sending an undefined page query for the default page. <Last Updated: 20/11/2026>

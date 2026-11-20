@@ -3,11 +3,13 @@ import { onBeforeMount } from 'vue'
 import { RouterView } from 'vue-router'
 import InfoModal from './components/modals/Info.vue'
 import { useInitialContent } from './composables/useInitialContent.ts'
+import { useJobListingApi } from './composables/useJobListingApi'
 
 const { getInitialContent, loading, apiError } = useInitialContent()
+const { getJobListings } = useJobListingApi()
 
 onBeforeMount(async () => {
-  await getInitialContent()
+  await Promise.all([getInitialContent(), getJobListings()])
 })
 </script>
 

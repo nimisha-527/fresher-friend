@@ -40,6 +40,12 @@
   "searchPlaceholder": "Search by role, company, location or skills",
   "fresherFriendLabel": "fresherFriend",
   "showingOpportunitiesLabel": "Showing {{ roles }} opportunities",
+  "pagination": {
+    "navigationLabel": "Job listing pages",
+    "previousPageLabel": "Previous page",
+    "nextPageLabel": "Next page",
+    "goToPageLabel": "Go to page {{page}}"
+  },
   "activeFiltersLabel": "1 Active Filter",
   "clearFiltersLabel": "Clear All Filters",
   "noResults": {
@@ -54,7 +60,11 @@
   "card": {
     "applyButtonLabel": "Apply Now ↗",
     "viewDetailsButtonLabel": "View Details",
-    "applyBeforeLabel": "Apply before : {{days}}"
+    "applyBeforeLabel": "Apply before: {{date}}",
+    "saveRoleLabel": "Save role",
+    "removeSavedRoleLabel": "Remove saved role",
+    "companyLogoAltLabel": "{{company}} logo",
+    "skillsLabel": "Skills"
   },
   "sortBy": {
     "label": "Sort:",
