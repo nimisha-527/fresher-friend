@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 dotenv.config();
 
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/webapp-kit";
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/fresher-friend";
 
 export const startServer = async() => {
     try {

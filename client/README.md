@@ -2,63 +2,82 @@
 
 This folder contains the frontend for the project. It is built with Vue, TypeScript, and Vite, and is responsible for rendering the UI and communicating with the backend API.
 
-## Folder structure
 
-```bash
-client/
-├── public/                     # Static assets served directly by Vite
-├── src/
-│   ├── assets/                # Shared static images, fonts, or icons
-│   ├── components/            # Reusable Vue components used across the app
-│   ├── composables/           # Reusable logic for data-fetching and state composition
-│   ├── router/                # Vue Router definitions and route configuration
-│   ├── stores/                # Pinia stores for shared reactive state
-│   ├── App.vue                # Main app layout and page structure
-│   ├── main.ts                # App bootstrap and plugin registration
-│   └── style.css              # Global styles and base styling
-├── index.html                 # HTML entry point for the app
-├── package.json               # Client dependencies and scripts
-├── tsconfig.json              # TypeScript config for the app
-├── tsconfig.app.json          # App-specific TypeScript config
-├── tsconfig.node.json         # TypeScript config for Node/Vite tooling
-├── vite.config.ts             # Vite configuration
-├── README.md                  # Documentation for the client app
-├── .env                       # Environment variables for the frontend
-├── .gitignore                 # Ignored files for Git
-└── .vscode/                   # Optional editor configuration
-```
+## Change log
 
-## Brief explanation
-
-- `public/`: Stores static files like images or icons that do not need processing.
-- `src/components/`: Keeps reusable Vue UI pieces used throughout the app.
-- `src/composables/`: Contains reusable logic such as API calls and shared state helpers.
-- `src/router/`: Defines app routes and navigation behavior.
-- `src/stores/`: Holds Pinia stores for centralized state management.
-- `src/App.vue`: The main Vue component that loads the app layout and page content.
-- `src/main.ts`: Starts the Vue app and registers the router and Pinia store.
-- `src/style.css`: Defines the global look and feel across the app.
-- `index.html`: The base HTML file used by Vite to launch the application.
-
-This structure keeps the frontend organized, making it easier to scale, maintain, and extend the client-side code.
-
-## Run the client app
-
-1. Open the client folder.
-2. Run the following command to start the Vite dev server, the dependencies will be installed automatically during inital setup:
-
-```bash
-npm run dev
-```
-
-> This command starts the Vite development server.
-
-## Environment variables
-
-Create or update the `.env` file in the client folder and set the backend URL key:
-
-```bash
-VITE_BACKEND_URL="http://localhost:3000"
-```
-
-This value tells the frontend where the Express server is running.
+- Updated: `index.html` - Show the info modal while the Vue app is bootstrapping. <Last Updated: 17/11/2026>
+- Updated: `src/components/modals/Info.vue` - Styled the text-only info modal with Tailwind classes. <Last Updated: 17/11/2026>
+- Updated: `src/App.vue` - Start initial content loading before the app's first render. <Last Updated: 17/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Test the loading modal message and absence of a close button. <Last Updated: 17/11/2026>
+- Added: `src/components/Tabs.vue` - Add responsive navigation tabs, the fresherFriend link, and a Saved Roles button with the saved count. <Last Updated: 17/11/2026>
+- Updated: `src/components/Portal.vue` - Render the tabs as the portal navigation. <Last Updated: 17/11/2026>
+- Added: `src/__tests__/Tabs.spec.ts` - Test navigation labels, destinations, icon, and initial saved count. <Last Updated: 17/11/2026>
+- Updated: `src/components/Tabs.vue` - Highlight Saved Roles with the primary color and contrasting text and count when active. <Last Updated: 17/11/2026>
+- Updated: `src/__tests__/Tabs.spec.ts` - Verify the Saved Roles active-state colors. <Last Updated: 17/11/2026>
+- Added: `src/components/Home.vue` - Add the All Roles home heading, description, search, and sort controls. <Last Updated: 17/11/2026>
+- Added: `src/components/SearchInput.vue` - Add a reusable search input with a Lucide search icon. <Last Updated: 17/11/2026>
+- Added: `src/components/SortSelector.vue` - Add a reusable selector with the configured sort options. <Last Updated: 17/11/2026>
+- Updated: `src/components/Portal.vue` - Render the Home page under the navigation tabs. <Last Updated: 17/11/2026>
+- Updated: `src/components/Tabs.vue` - Highlight All Roles while the Home route is active. <Last Updated: 17/11/2026>
+- Added: `src/__tests__/Home.spec.ts` - Test home content and search/sort controls. <Last Updated: 17/11/2026>
+- Added: `src/router/paths.ts` - Centralize the home and navigation route paths. <Last Updated: 18/11/2026>
+- Updated: `src/router/index.ts` - Register the home and existing navigation destinations. <Last Updated: 18/11/2026>
+- Updated: `src/App.vue` - Render the active route through RouterView. <Last Updated: 18/11/2026>
+- Updated: `src/components/Portal.vue` - Show Home only for the All Roles route. <Last Updated: 18/11/2026>
+- Updated: `src/components/Tabs.vue` - Use the shared route paths for navigation links. <Last Updated: 18/11/2026>
+- Added: `src/__tests__/Router.spec.ts` - Verify home and navigation routes are registered. <Last Updated: 18/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Normalize modal whitespace when checking the loading message. <Last Updated: 18/11/2026>
+- Updated: `src/views/Home.vue` - Keep the Home page in the views directory; `Portal.vue` imports it from there. <Last Updated: 18/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Import Home from its views directory location. <Last Updated: 18/11/2026>
+- Added: `src/components/JobCard.vue` - Render job details, IST expiry dates, salary ranges, save actions, and apply links. <Last Updated: 20/11/2026>
+- Added: `src/stores/savedRoles.ts` - Manage saved role IDs and the reactive saved roles count with Pinia. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Display up to 20 job cards from the job mock. <Last Updated: 20/11/2026>
+- Updated: `src/components/Tabs.vue` - Show the reactive saved roles count. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/allRolesData.json` - Include application links for job cards. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add card labels for apply dates, bookmarks, logos, and skills. <Last Updated: 20/11/2026>
+- Added: `src/__tests__/JobCard.spec.ts` - Test card details, IST expiry formatting, undisclosed salary, and equal salary endpoints. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Test the job card limit and saved-role toggling. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Tabs.spec.ts` - Test the displayed saved roles count. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Add responsive pagination using a 20-job page size. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add pagination navigation and page button labels. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Test the home-page pagination controls. <Last Updated: 20/11/2026>
+- Added: `src/composables/useJobListingApi.ts` - Load job listings from the API or local mock data according to `VITE_USE_MOCK`. <Last Updated: 20/11/2026>
+- Added: `src/stores/jobListings.ts` - Store job listing results, loading state, and request errors with Pinia. <Last Updated: 20/11/2026>
+- Added: `src/types/jobListing.ts` - Define the job listing response shape used by the API and cards. <Last Updated: 20/11/2026>
+- Updated: `src/App.vue` - Request job listings alongside initial content at app startup. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Render API/mock job data with loading and error states. <Last Updated: 20/11/2026>
+- Updated: `src/components/JobCard.vue` - Use the shared job listing type. <Last Updated: 20/11/2026>
+- Updated: `env.d.ts` - Declare the backend URL and mock-mode Vite variables. <Last Updated: 20/11/2026>
+- Added: `src/__tests__/useJobListingApi.spec.ts` - Test mock/API selection and request error state. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Verify initial content and job listings load during startup. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Seed and verify job listings through the Pinia store. <Last Updated: 20/11/2026>
+- Updated: `src/composables/useJobListingApi.ts` - Append a digits-only page query for pages above 1 and omit the default page 1 parameter. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Show 15 API-mode pages for the 300-post demo and fetch the selected page. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/useJobListingApi.spec.ts` - Verify page values are numeric and page 1 is omitted. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Verify the 15-page API-mode controls request the selected page. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Verify the startup jobs request uses the mounted server route. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Render the API response as the selected page instead of applying the global page offset twice. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Verify page 5 results render after the paged API response loads. <Last Updated: 20/11/2026>
+- Updated: `src/composables/useJobListingApi.ts` - Avoid sending an undefined page query for the default page. <Last Updated: 20/11/2026>
+- Added: `src/components/FilterOpportunities.vue` - Render checkbox groups for work mode, location, parent categories, and salary range below search and sort. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Filter the currently loaded job page using selected checkboxes; selections are ORed within a group and combined with AND across groups. Salary options match `minSalary`, fall back to `maxSalary`, and use `Not Disclosed` when neither is available; salary values retain their displayed currency or LPA unit. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Show the filter-specific no-results message when no loaded jobs match the selected filters. <Last Updated: 20/11/2026>
+- Updated: `src/types/jobListing.ts` - Define the selected job filter groups. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/filterOpportunities.json` - Provide the checkbox options rendered by the filter panel. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add filter labels and the filter-specific no-results content. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Test filter controls, combined matching, salary ranges, and the no-results state. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Place the filter sidebar beside job listings on wide screens and stack it above listings on smaller screens. <Last Updated: 20/11/2026>
+- Added: `src/stores/filterOpportunities.ts` and `src/types/filterOpportunities.ts` - Store and type filter options for use across components. <Last Updated: 20/11/2026>
+- Added: `src/composables/useFilterOpportunitiesApi.ts` - Load filter options from the API or local mock data, and expose request errors in the store. <Last Updated: 20/11/2026>
+- Updated: `src/App.vue` - Request filter options after the initial job-listings request completes. <Last Updated: 20/11/2026>
+- Updated: `src/components/FilterOpportunities.vue` - Render options from the shared filter-opportunities store. <Last Updated: 20/11/2026>
+- Added: `src/__tests__/useFilterOpportunitiesApi.spec.ts` - Test mock/API loading and filter request errors. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Verify filter options load after job listings. <Last Updated: 20/11/2026>
+- Updated: `src/components/SearchInput.vue` and `src/views/Home.vue` - Sanitize search input and match case-insensitively against all API filter options; ignore punctuation such as category hyphens and include a job when any query word matches. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Sort jobs by most recent or salary; convert USD amounts to LPA with the live USD-to-INR rate, keep existing LPA values unchanged, and leave undisclosed/unrecognized salaries last. <Last Updated: 20/11/2026>
+- Added: `src/composables/useUsdInrRate.ts` - Load and validate the live USD-to-INR rate when salary sorting is selected, and surface retryable errors. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Describe the searchable locations, work modes, categories, and salary options. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` and `src/components/FilterOpportunities.vue` - Add API-backed role-type checkbox filtering and include role types in search. <Last Updated: 20/11/2026>
+- Added: `src/views/SavedRoles.vue` - Render saved job cards with the shared JobCard component and an empty-state panel with an Explore Roles link back to Home. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Show a Clear All Filters button when search, sort, or filter controls are active; reset them and hide the button after clearing. <Last Updated: 20/11/2026>
+- Updated: `src/components/Tabs.vue` and `src/mocks/getStaticContent.json` - Remove the duplicate tabs and All Roles link; keep the fresherFriend home link on the left and Saved Roles on the right. <Last Updated: 20/11/2026>

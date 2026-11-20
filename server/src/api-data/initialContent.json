@@ -1,0 +1,107 @@
+{
+  "allRoles": {
+    "heading": "Fresher Jobs & Internships Across India",
+    "description": "Verified entry-level roles and paid internships from Indian product startups and engineering teams—with upfront INR compensation and one-step applications."
+  },
+  "searchPlaceholder": "Search locations, work modes, role types, categories, or salary options",
+  "fresherFriendLabel": "fresherFriend",
+  "showingOpportunitiesLabel": "Showing {{ roles }} opportunities",
+  "activeFiltersLabel": "1 Active Filter",
+  "clearFiltersLabel": "Clear All Filters",
+  "noResults": {
+    "title": "No results found",
+    "description": "We couldn't find any roles matching your search criteria. Please try adjusting your filters or search terms.",
+    "suggestions": [
+      "Check your spelling for typos.",
+      "Try using different keywords or broader terms.",
+      "Remove some filters to expand your search.",
+      "Search is based on 200+ posts, while results are matched only on this page. Try another page. Do not worry you do not need to type again."
+    ]
+  },
+  "card": {
+    "applyButtonLabel": "Apply Now ↗",
+    "viewDetailsButtonLabel": "View Details",
+    "applyBeforeLabel": "Apply before : {{days}}"
+  },
+  "sortBy": {
+    "label": "Sort:",
+    "options": [
+      {
+        "id": 1,
+        "label": "Most Recent"
+      },
+      {
+        "id": 2,
+        "label": "Highest Salary"
+      },
+      {
+        "id": 3,
+        "label": "Lowest Salary"
+      }
+    ]
+  },
+  "savedRolesData": {
+    "savedRolesLabel": "Saved Roles",
+    "noSavedRolesLabel": "No saved roles yet",
+    "noSavedRolesDescription": "You can save roles by clicking the bookmark icon on the role card. Saved roles will appear here for easy access.",
+    "noSavedRolesButtonLabel": "Explore Roles",
+    "savedRolesMessage": "Showing {{ savedRoles.length }} saved roles"
+  },
+  "applyModal": {
+    "title": "Applying for {{ title }} at {{ company }} {{ location }}",
+    "description": "Please fill out the form below to submit your application. Ensure that all required fields are completed before submitting.",
+    "form": {
+      "nameLabel": "Full Name",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Phone Number (Optional)",
+      "collegeLabel": "College/University",
+      "passingYearLabel": "Passing Year (Optional)",
+      "GitHubLabel": "GitHub Profile (Optional)",
+      "LinkedInLabel": "LinkedIn Profile (Optional)",
+      "portfolioLabel": "Portfolio/Website (Optional)",
+      "resumeLabel": "Upload Resume",
+      "shortNoteLabel": "Short note to hiring team (Optional)",
+      "submitButtonLabel": "Submit Application",
+      "cancelButtonLabel": "Cancel"
+    },
+    "validation": {
+      "nameRequired": "Full Name is required.",
+      "emailRequired": "Email Address is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "resumeRequired": "Resume upload is required.",
+      "collegeRequired": "College/University is required."
+    },
+    "successMessage": "Thank you for applying! Your application has been submitted successfully.",
+    "errorMessage": "There was an error submitting your application. Please try again later."
+  },
+  "filterOpportunities": {
+    "label": "Filter Opportunities",
+    "locationLabel": "Location",
+    "workModeLabel": "Work Mode",
+    "roleTypeLabel": "Role Type",
+    "parentCategoriesLabel": "Categories",
+    "salaryRange": "Salary Range",
+    "noResults": {
+      "title": "No results found",
+      "description": "No roles on this page match your selected filters.",
+      "suggestions": "Filter options are based on 200+ posts, while results are matched only on this page. Try another page or adjust your filters."
+    }
+  },
+  "error": {
+    "title": "Oops! Something went wrong.",
+    "description": "We encountered an unexpected error while trying to load the content. Please try refreshing the page or come back later.",
+    "retryButtonLabel": "Retry"
+  },
+  "footer": {
+    "projectInfo": "FreshStart India — Built for 2025-2027 Engineering, Product & Design graduates.",
+    "stipendInfo": "All stipends & CTCs shown in INR (₹).",
+    "socialMedia": {
+      "linkedinLabel": "Connect with us on LinkedIn",
+      "githubLabel": "Check out our GitHub"
+    }
+  },
+  "loading": {
+    "title": "Loading...",
+    "description": "Please wait while we fetch the latest content for you."
+  }
+}
