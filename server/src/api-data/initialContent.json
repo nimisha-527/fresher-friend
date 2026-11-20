@@ -37,7 +37,7 @@
     "noApplicationsDescription": "You can apply to roles by clicking the 'Apply Now' button on the role card. Your submitted applications will appear here for easy tracking.",
     "noApplicationsButtonLabel": "Explore Roles"
   },
-  "searchPlaceholder": "Search by role, company, location or skills",
+  "searchPlaceholder": "Search locations, work modes, role types, categories, or salary options",
   "fresherFriendLabel": "fresherFriend",
   "showingOpportunitiesLabel": "Showing {{ roles }} opportunities",
   "activeFiltersLabel": "1 Active Filter",
@@ -48,7 +48,8 @@
     "suggestions": [
       "Check your spelling for typos.",
       "Try using different keywords or broader terms.",
-      "Remove some filters to expand your search."
+      "Remove some filters to expand your search.",
+      "Search is based on 200+ posts, while results are matched only on this page. Try another page. Do not worry you do not need to type again."
     ]
   },
   "card": {
@@ -111,8 +112,14 @@
     "label": "Filter Opportunities",
     "locationLabel": "Location",
     "workModeLabel": "Work Mode",
-    "parentCategoriesLabel": "Parent Categories",
-    "minimumSalaryLabel": "Minimum Salary"
+    "roleTypeLabel": "Role Type",
+    "parentCategoriesLabel": "Categories",
+    "salaryRange": "Salary Range",
+    "noResults": {
+      "title": "No results found",
+      "description": "No roles on this page match your selected filters.",
+      "suggestions": "Filter options are based on 200+ posts, while results are matched only on this page. Try another page or adjust your filters."
+    }
   },
   "error": {
     "title": "Oops! Something went wrong.",

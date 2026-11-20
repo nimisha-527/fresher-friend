@@ -7,6 +7,19 @@ defineOptions({
 })
 
 const searchQuery = defineModel<string>({ required: true })
+
+function updateSearchQuery(event: Event) {
+  const input = event.currentTarget
+  if (!(input instanceof HTMLInputElement)) {
+    return
+  }
+
+  const sanitizedQuery = input.value.replace(/[^\p{L}\p{N}\s]/gu, '')
+  if (input.value !== sanitizedQuery) {
+    input.value = sanitizedQuery
+  }
+  searchQuery.value = sanitizedQuery
+}
 </script>
 
 <template>
@@ -17,11 +30,12 @@ const searchQuery = defineModel<string>({ required: true })
       class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#52525B]"
     />
     <input
-      v-model="searchQuery"
+      :value="searchQuery"
       type="search"
       :aria-label="staticContent.searchPlaceholder"
       :placeholder="staticContent.searchPlaceholder"
       class="w-full rounded-lg border border-[#E5E7EB] bg-white py-3 pl-12 pr-4 text-[#111111] outline-none transition focus:border-[#FACC15] focus:ring-2 focus:ring-[#FACC15]/30"
+      @input="updateSearchQuery"
     />
   </div>
 </template>

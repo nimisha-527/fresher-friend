@@ -11,7 +11,7 @@ const jobsPerPage = 20;
 
 let refreshInProgress: Promise<JobListing[]> | undefined;
 
-async function getAllJobListings(): Promise<JobListing[]> {
+export async function getAllJobListings(): Promise<JobListing[]> {
   const cached = await JobListingsCacheModel.findOne({
     cacheKey: jobListingsCacheKey,
   }).lean();

@@ -2,14 +2,22 @@
 import { onBeforeMount } from 'vue'
 import { RouterView } from 'vue-router'
 import InfoModal from './components/modals/Info.vue'
+import { useFilterOpportunitiesApi } from './composables/useFilterOpportunitiesApi'
 import { useInitialContent } from './composables/useInitialContent.ts'
 import { useJobListingApi } from './composables/useJobListingApi'
 
 const { getInitialContent, loading, apiError } = useInitialContent()
 const { getJobListings } = useJobListingApi()
+const { getFilterOpportunities } = useFilterOpportunitiesApi()
 
 onBeforeMount(async () => {
-  await Promise.all([getInitialContent(), getJobListings()])
+  await Promise.all([
+    getInitialContent(),
+    (async () => {
+      await getJobListings()
+      await getFilterOpportunities()
+    })(),
+  ])
 })
 </script>
 
