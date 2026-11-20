@@ -1,19 +1,23 @@
 import type { Request, Response } from "express";
 import { JobListingsCacheModel } from "../../../database";
-import { processAndCacheJobsWithAI } from "./jobCheckAI";
+import {
+  jobListingsCacheDurationMs,
+  jobListingsCacheKey,
+  processAndCacheJobsWithAI,
+} from "./jobCheckAI";
 import type { JobListing } from "../types/jobListing";
 
-const cacheDurationMs = 24 * 60 * 60 * 1000;
-const cacheKey = "india-recent-jobs";
 const jobsPerPage = 20;
 
 let refreshInProgress: Promise<JobListing[]> | undefined;
 
 async function getAllJobListings(): Promise<JobListing[]> {
-  const cached = await JobListingsCacheModel.findOne({ cacheKey }).lean();
+  const cached = await JobListingsCacheModel.findOne({
+    cacheKey: jobListingsCacheKey,
+  }).lean();
   if (
     cached &&
-    Date.now() - cached.generatedAt.getTime() < cacheDurationMs
+    Date.now() - cached.generatedAt.getTime() < jobListingsCacheDurationMs
   ) {
     return cached.jobs;
   }

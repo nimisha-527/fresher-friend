@@ -5,6 +5,7 @@ import {
 } from "../../genai/tagsJobsWithGemini";
 import {
   cleanDescription,
+  deduplicateHimalayasJobs,
   formatSalaryLPA,
   requiresMultiYearExperience,
 } from "../utils";
@@ -14,7 +15,12 @@ import type { HimalayasJob, JobListing } from "../types/jobListing";
 const jobsApiUrl = "https://himalayas.app/jobs/api/search";
 const sourcePageCount = 15;
 const jobBatchSize = 20;
-const cacheKey = "india-recent-jobs";
+export const jobListingsCacheKey = "india-recent-jobs";
+export const jobListingsCacheDurationMs = 24 * 60 * 60 * 1000;
+const refreshRetryDelayMs = 60 * 60 * 1000;
+let refreshInProgress: Promise<JobCheckResult> | undefined;
+let autoRefreshTimer: ReturnType<typeof setTimeout> | undefined;
+let autoRefreshStarted = false;
 
 const allowedRoleTypes = [
   "Internship",
@@ -59,6 +65,24 @@ function isHimalayasJob(job: unknown): job is HimalayasJob {
 interface JobCheckResult {
   jobs: JobListing[];
   tokenUsage: TokenUsage;
+}
+
+function scheduleAutoRefresh(delayMs: number): void {
+  if (!autoRefreshStarted) {
+    return;
+  }
+
+  if (autoRefreshTimer) {
+    clearTimeout(autoRefreshTimer);
+  }
+
+  autoRefreshTimer = setTimeout(() => {
+    autoRefreshTimer = undefined;
+    void processAndCacheJobsWithAI().catch((error) => {
+      console.error("Scheduled job-check refresh failed:", error);
+      scheduleAutoRefresh(refreshRetryDelayMs);
+    });
+  }, Math.max(0, delayMs));
 }
 
 function sumTokenCounts(
@@ -160,10 +184,10 @@ export async function checkJobsWithAI(
   return { jobs, tokenUsage };
 }
 
-export async function processAndCacheJobsWithAI(): Promise<JobCheckResult> {
+async function refreshJobsAndCache(): Promise<JobCheckResult> {
   const listings: JobListing[] = [];
   const tokenUsage: TokenUsage = { inputTokens: 0, outputTokens: 0 };
-  let sourceOffset = 0;
+  const rawJobs: HimalayasJob[] = [];
 
   for (let page = 1; page <= sourcePageCount; page += 1) {
     const query = new URLSearchParams({
@@ -195,32 +219,75 @@ export async function processAndCacheJobsWithAI(): Promise<JobCheckResult> {
       throw new Error(`Jobs service returned malformed jobs for page ${page}.`);
     }
 
-    for (let offset = 0; offset < pageJobs.length; offset += jobBatchSize) {
-      const batchResult = await checkJobsWithAI(
-        pageJobs.slice(offset, offset + jobBatchSize),
-        sourceOffset + offset,
-      );
-      listings.push(...batchResult.jobs);
-      tokenUsage.inputTokens = sumTokenCounts(
-        tokenUsage.inputTokens,
-        batchResult.tokenUsage.inputTokens,
-      );
-      tokenUsage.outputTokens = sumTokenCounts(
-        tokenUsage.outputTokens,
-        batchResult.tokenUsage.outputTokens,
-      );
-    }
+    rawJobs.push(...pageJobs);
+  }
 
-    sourceOffset += pageJobs.length;
+  const deduplicatedJobs = deduplicateHimalayasJobs(rawJobs);
+  for (let offset = 0; offset < deduplicatedJobs.length; offset += jobBatchSize) {
+    const batchResult = await checkJobsWithAI(
+      deduplicatedJobs.slice(offset, offset + jobBatchSize),
+      offset,
+    );
+    listings.push(...batchResult.jobs);
+    tokenUsage.inputTokens = sumTokenCounts(
+      tokenUsage.inputTokens,
+      batchResult.tokenUsage.inputTokens,
+    );
+    tokenUsage.outputTokens = sumTokenCounts(
+      tokenUsage.outputTokens,
+      batchResult.tokenUsage.outputTokens,
+    );
   }
 
   await JobListingsCacheModel.findOneAndUpdate(
-    { cacheKey },
-    { cacheKey, jobs: listings, generatedAt: new Date() },
+    { cacheKey: jobListingsCacheKey },
+    {
+      cacheKey: jobListingsCacheKey,
+      jobs: listings,
+      generatedAt: new Date(),
+    },
     { upsert: true, new: true, runValidators: true },
   );
 
   return { jobs: listings, tokenUsage };
+}
+
+export function processAndCacheJobsWithAI(): Promise<JobCheckResult> {
+  if (!refreshInProgress) {
+    refreshInProgress = refreshJobsAndCache()
+      .then((result) => {
+        scheduleAutoRefresh(jobListingsCacheDurationMs);
+        return result;
+      })
+      .finally(() => {
+        refreshInProgress = undefined;
+      });
+  }
+
+  return refreshInProgress;
+}
+
+export async function startJobCheckAutoRefresh(): Promise<void> {
+  if (autoRefreshStarted) {
+    return;
+  }
+
+  autoRefreshStarted = true;
+  try {
+    const cached = await JobListingsCacheModel.findOne({
+      cacheKey: jobListingsCacheKey,
+    }).lean();
+    const cacheAgeMs = cached
+      ? Date.now() - cached.generatedAt.getTime()
+      : jobListingsCacheDurationMs;
+
+    scheduleAutoRefresh(
+      Math.max(0, jobListingsCacheDurationMs - cacheAgeMs),
+    );
+  } catch (error) {
+    console.error("Unable to read job cache for refresh scheduling:", error);
+    scheduleAutoRefresh(refreshRetryDelayMs);
+  }
 }
 
 export async function postJobCheckAI(_req: Request, res: Response) {
