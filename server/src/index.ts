@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import expressSession from "express-session";
 import { initialContent } from "../src/route"
 import jobListing from "./route/jobListing.ts";
+import { startJobCheckAutoRefresh } from "./controllers/jobCheckAI.ts";
 import { mongoDBConnection } from "../../database";
 
 const { startServer, store } = await mongoDBConnection();
@@ -16,6 +17,7 @@ const port = process.env.PORT || 3000;
 const sessionSecret = process.env.SESSION_SECRET || "";
 
 await startServer();
+void startJobCheckAutoRefresh();
 
 const session = expressSession({
     secret: sessionSecret,

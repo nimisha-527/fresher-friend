@@ -1,3 +1,5 @@
+import type { HimalayasJob } from "../types/jobListing";
+
 // Helper to format raw Himalayas salary into "2.4 LPA"
 export function formatSalaryLPA(
   amount: number | undefined,
@@ -18,6 +20,30 @@ export function cleanDescription(html = "") {
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 1000);
+}
+
+export function deduplicateHimalayasJobs(
+  jobs: HimalayasJob[],
+): HimalayasJob[] {
+  const seen = new Set<string>();
+
+  return jobs.filter((job) => {
+    const guid = job.guid?.trim().toLowerCase();
+    const title = job.title.trim().toLowerCase();
+    const companyName = job.companyName?.trim().toLowerCase();
+
+    if (!guid || !title || !companyName) {
+      return true;
+    }
+
+    const key = JSON.stringify([guid, title, companyName]);
+    if (seen.has(key)) {
+      return false;
+    }
+
+    seen.add(key);
+    return true;
+  });
 }
 
 export function resolveRoleType(
