@@ -11,9 +11,31 @@ const MODEL_FALLBACK_CHAIN = [
   "gemini-3.8-flash",
 ];
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+interface SlimJob {
+  id: string;
+  title: string;
+  employmentType: string;
+  seniority: string[];
+  rawLocation: string;
+  excerpt: string;
+}
 
-export async function tagJobsBatch(slimJobs) {
+export interface TokenUsage {
+  inputTokens: number | null;
+  outputTokens: number | null;
+}
+
+export interface TaggedJobsBatch {
+  jobs: unknown;
+  tokenUsage: TokenUsage;
+}
+
+const sleep = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+export async function tagJobsBatch(
+  slimJobs: SlimJob[],
+): Promise<TaggedJobsBatch> {
   const responseSchema = {
     type: Type.ARRAY,
     items: {
@@ -104,10 +126,32 @@ ${JSON.stringify(slimJobs)}
           },
         });
 
-        return JSON.parse(response.text);
+        if (typeof response.text !== "string") {
+          throw new Error("Gemini returned an empty job tagging response.");
+        }
+
+        return {
+          jobs: JSON.parse(response.text),
+          tokenUsage: {
+            inputTokens: response.usageMetadata?.promptTokenCount ?? null,
+            outputTokens: response.usageMetadata?.candidatesTokenCount ?? null,
+          },
+        };
       } catch (err) {
         lastError = err;
-        const status = err?.status || err?.error?.code;
+        const status =
+          err &&
+          typeof err === "object" &&
+          "status" in err
+            ? err.status
+            : err &&
+                typeof err === "object" &&
+                "error" in err &&
+                err.error &&
+                typeof err.error === "object" &&
+                "code" in err.error
+              ? err.error.code
+              : undefined;
         const isTransient = status === 503 || status === 429;
 
         if (isTransient) {

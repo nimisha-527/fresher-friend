@@ -1,5 +1,8 @@
 // Helper to format raw Himalayas salary into "2.4 LPA"
-export function formatSalaryLPA(amount, currency) {
+export function formatSalaryLPA(
+  amount: number | undefined,
+  currency: string | undefined,
+): string {
   if (!amount) return "Not Disclosed";
   if (currency === "INR") {
     const lpa = (amount / 100000).toFixed(1).replace(/\.0$/, "");

@@ -1,5 +1,4 @@
-import axios from 'axios'
-import type { AxiosResponse } from 'axios'
+import axios, { type AxiosResponse } from 'axios'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
 import { createPinia } from 'pinia'
@@ -8,7 +7,7 @@ import allRolesData from '../mocks/allRolesData.json'
 import staticContent from '../mocks/getStaticContent.json'
 import { useJobListingsStore } from '../stores/jobListings'
 import { useSavedRolesStore } from '../stores/savedRoles'
-import type { JobListing } from '../types/jobListing'
+import type { JobListing, JobListingsPage } from '../types/jobListing'
 
 describe('Home', () => {
   beforeEach(() => {
@@ -75,22 +74,37 @@ describe('Home', () => {
     expect(pagination.find('button[aria-label="Next page"]').attributes('disabled')).toBeDefined()
   })
 
-  it('shows 15 API pages and requests the selected page number', async () => {
+  it('requests and renders the selected API page', async () => {
     vi.stubEnv('VITE_USE_MOCK', 'false')
-    const pinia = createPinia()
-    useJobListingsStore(pinia).setJobListings(allRolesData)
-    const response: AxiosResponse<JobListing[]> = {
-      data: allRolesData,
+    const firstListing = allRolesData[0]
+    if (!firstListing) {
+      throw new Error('Mock job listings must contain at least one listing.')
+    }
+
+    const listings: JobListing[] = Array.from({ length: 300 }, (_, index) => ({
+      ...firstListing,
+      id: index + 1,
+      title: `Role ${index + 1}`,
+    }))
+    const pageFiveListings = listings.slice(80, 100)
+    const response: AxiosResponse<JobListingsPage> = {
+      data: {
+        jobs: pageFiveListings,
+        page: 5,
+        pageSize: 20,
+        totalJobs: 300,
+        totalPages: 15,
+      },
       status: 200,
       statusText: 'OK',
       headers: {},
       config: {
-        headers: {} as AxiosResponse<JobListing[]>['config']['headers'],
+        headers: {} as AxiosResponse<JobListingsPage>['config']['headers'],
       },
     }
-    const request = vi
-      .spyOn(axios, 'get')
-      .mockResolvedValue(response)
+    const request = vi.spyOn(axios, 'get').mockResolvedValue(response)
+    const pinia = createPinia()
+    useJobListingsStore(pinia).setJobListings(listings.slice(0, 20), 15)
     const wrapper = mount(Home, {
       global: { plugins: [pinia] },
     })
@@ -103,13 +117,11 @@ describe('Home', () => {
     await pagination.get('button[aria-label="Go to page 5"]').trigger('click')
     await flushPromises()
 
-    expect(request).toHaveBeenCalledWith(
-      'http://api.test/fresherFriend/jobs-listing?country=IN&exclude_worldwide=true&sort=recent&page=5',
+    expect(request).toHaveBeenCalledExactlyOnceWith(
+      'http://api.test/fresherFriend/jobs-listing?page=5',
     )
-    expect(request.mock.calls[0]?.[0]).toMatch(/(?:\?|&)page=\d+$/)
-    expect(wrapper.findAll('article')).toHaveLength(
-      Math.min(allRolesData.length, 20),
-    )
+    expect(wrapper.findAll('article')).toHaveLength(20)
+    expect(wrapper.get('article h2').text()).toBe('Role 81')
     expect(wrapper.get('[aria-current="page"]').text()).toBe('5')
   })
 })
