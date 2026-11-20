@@ -45,7 +45,15 @@ app.use((req, res, next) => {
     // You can update your origins according to your app.
 
     const origin = req.headers.origin || 'http://localhost:5173';
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000', 'https://himalayas.app'];
+    const clientURL = process.env.CLIENT_URL || 'https://fresher-friend-client.onrender.com';
+    const serverURL = process.env.SERVER_URL || 'https://fresher-friend-server.onrender.com';
+    const allowedOrigins = [
+        'http://localhost:5173',
+        'http://localhost:3000',
+        'https://himalayas.app',
+        clientURL,
+        serverURL
+    ];
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
         res.setHeader('Access-Control-Allow-Credentials', 'true');
