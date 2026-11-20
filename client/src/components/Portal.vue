@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import Home from '../views/Home.vue'
+import SavedRoles from '../views/SavedRoles.vue'
 import Tabs from './Tabs.vue'
 import { routePaths } from '../router/paths'
 
@@ -15,5 +16,6 @@ const route = useRoute()
   <div class="min-h-screen bg-[#FAFAFA]">
     <Tabs />
     <Home v-if="route.path === routePaths.home" />
+    <SavedRoles v-else-if="route.path === routePaths.savedJobs" />
   </div>
 </template>

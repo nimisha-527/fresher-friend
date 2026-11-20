@@ -88,7 +88,7 @@
   "savedRolesData": {
     "savedRolesLabel": "Saved Roles",
     "noSavedRolesLabel": "No saved roles yet",
-    "noSavedRolesDescription": "You can save roles by clicking the heart icon on the role card. Saved roles will appear here for easy access.",
+    "noSavedRolesDescription": "You can save roles by clicking the bookmark icon on the role card. Saved roles will appear here for easy access.",
     "noSavedRolesButtonLabel": "Explore Roles",
     "savedRolesMessage": "Showing {{ savedRoles.length }} saved roles"
   },

@@ -14,7 +14,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  toggleSaved: [jobId: JobListing['id']]
+  toggleSaved: [job: JobListing]
 }>()
 
 const imageFailed = ref(false)
@@ -117,7 +117,7 @@ const applicationLink = computed(() => props.job.applicationLink.trim())
             ? 'border-[#FACC15] bg-[#FACC15] text-[#111111]'
             : 'border-[#E5E7EB] bg-white text-[#52525B] hover:bg-[#FEF9C3] hover:text-[#111111]',
         ]"
-        @click="emit('toggleSaved', job.id)"
+        @click="emit('toggleSaved', job)"
       >
         <Bookmark :size="19" :fill="saved ? 'currentColor' : 'none'" aria-hidden="true" />
       </button>

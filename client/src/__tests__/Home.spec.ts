@@ -150,6 +150,48 @@ describe('Home', () => {
     expect(wrapper.findAll('article')).toHaveLength(1)
   })
 
+  it('shows Clear All Filters when controls are active and resets them on click', async () => {
+    vi.spyOn(axios, 'get').mockResolvedValue({
+      data: { rates: { INR: 92.68 } },
+    } as AxiosResponse<{ rates: { INR: number } }>)
+    const pinia = createPinia()
+    useJobListingsStore(pinia).setJobListings(allRolesData)
+    useFilterOpportunitiesStore(pinia).setFilterOpportunities(filterOptions)
+    const wrapper = mount(Home, {
+      global: { plugins: [pinia] },
+    })
+    const clearButton = () =>
+      wrapper.findAll('button').find(
+        (button) => button.text() === staticContent.clearFiltersLabel,
+      )
+
+    expect(clearButton()).toBeUndefined()
+
+    await wrapper.get('input[type="search"]').setValue('Remote')
+    expect(clearButton()).toBeDefined()
+
+    await wrapper.get('select#sort-by').setValue(2)
+    await flushPromises()
+    await wrapper
+      .get('input[type="checkbox"][value="Remote"]')
+      .setValue(true)
+
+    expect(clearButton()).toBeDefined()
+    const activeClearButton = clearButton()
+    if (!activeClearButton) {
+      throw new Error('Clear filters button should be visible while controls are active.')
+    }
+    await activeClearButton.trigger('click')
+
+    expect((wrapper.get('input[type="search"]').element as HTMLInputElement).value).toBe('')
+    expect((wrapper.get('select#sort-by').element as HTMLSelectElement).value).toBe('1')
+    expect(
+      (wrapper.get('input[type="checkbox"][value="Remote"]').element as HTMLInputElement)
+        .checked,
+    ).toBe(false)
+    expect(clearButton()).toBeUndefined()
+  })
+
   it('filters the current jobs by the selected role types', async () => {
     const firstListing = allRolesData[0]
     const firstRoleType = filterOptions.roleType[0]

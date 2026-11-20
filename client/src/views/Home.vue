@@ -27,7 +27,8 @@ if (!initialSortOption) {
   throw new Error('At least one sort option is required.')
 }
 
-const selectedSortOption = ref<number | ''>(initialSortOption.id)
+const defaultSortOptionId = initialSortOption.id
+const selectedSortOption = ref<number | ''>(defaultSortOptionId)
 const currentPage = ref(1)
 const selectedFilters = ref<JobListingFilters>({
   workMode: [],
@@ -71,6 +72,24 @@ const jobs = computed(() => {
 const hasSelectedFilters = computed(() =>
   Object.values(selectedFilters.value).some((values) => values.length > 0),
 )
+const hasActiveSearchSortOrFilter = computed(
+  () =>
+    searchQuery.value.trim() !== '' ||
+    selectedSortOption.value !== defaultSortOptionId ||
+    hasSelectedFilters.value,
+)
+
+function clearSearchSortAndFilters() {
+  searchQuery.value = ''
+  selectedSortOption.value = defaultSortOptionId
+  selectedFilters.value = {
+    workMode: [],
+    location: [],
+    roleType: [],
+    parentCategories: [],
+    salaryRange: [],
+  }
+}
 
 function normalizeSearchValue(value: string): string {
   return value
@@ -287,6 +306,16 @@ async function goToPage(page: number) {
           <div class="flex flex-col gap-4 md:flex-row md:items-center">
             <SearchInput v-model="searchQuery" class="min-w-0 flex-1" />
             <SortSelector v-model="selectedSortOption" />
+          </div>
+
+          <div v-if="hasActiveSearchSortOrFilter" class="mt-4">
+            <button
+              type="button"
+              class="rounded-lg border border-[#E5E7EB] bg-white px-4 py-2 text-sm font-semibold text-[#52525B] transition-colors hover:bg-[#FEF9C3] hover:text-[#111111] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FACC15]"
+              @click="clearSearchSortAndFilters"
+            >
+              {{ staticContent.clearFiltersLabel }}
+            </button>
           </div>
 
           <div
