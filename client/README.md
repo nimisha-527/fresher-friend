@@ -80,3 +80,4 @@ This folder contains the frontend for the project. It is built with Vue, TypeScr
 - Updated: `src/views/Home.vue` and `src/components/FilterOpportunities.vue` - Add API-backed role-type checkbox filtering and include role types in search. <Last Updated: 20/11/2026>
 - Added: `src/views/SavedRoles.vue` - Render saved job cards with the shared JobCard component and an empty-state panel with an Explore Roles link back to Home. <Last Updated: 20/11/2026>
 - Updated: `src/views/Home.vue` - Show a Clear All Filters button when search, sort, or filter controls are active; reset them and hide the button after clearing. <Last Updated: 20/11/2026>
+- Updated: `src/components/Tabs.vue` and `src/mocks/getStaticContent.json` - Remove the duplicate tabs and All Roles link; keep the fresherFriend home link on the left and Saved Roles on the right. <Last Updated: 20/11/2026>
