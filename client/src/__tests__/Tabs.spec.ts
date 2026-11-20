@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import Tabs from '../components/Tabs.vue'
 import allRolesData from '../mocks/allRolesData.json'
+import staticContent from '../mocks/getStaticContent.json'
 import { routePaths } from '../router/paths'
 import { useSavedRolesStore } from '../stores/savedRoles'
 
@@ -21,7 +22,7 @@ const createTestRouter = () =>
   })
 
 describe('Tabs', () => {
-  it('renders the requested navigation and initial saved roles count', async () => {
+  it('renders the home brand link and Saved Roles link without tabs', async () => {
     const router = createTestRouter()
     await router.push(routePaths.home)
     await router.isReady()
@@ -29,17 +30,19 @@ describe('Tabs', () => {
       global: { plugins: [router, createPinia()] },
     })
 
-    expect(wrapper.text()).toContain('fresherFriend')
-    expect(wrapper.text()).toContain('All Roles')
-    expect(wrapper.text()).toContain('Internships')
-    expect(wrapper.text()).toContain('Fresher Jobs')
-    expect(wrapper.text()).toContain('My Applications')
-    expect(wrapper.text()).toContain('Saved Roles')
+    expect(wrapper.text()).toContain(staticContent.fresherFriendLabel)
+    expect(wrapper.text()).not.toContain('All Roles')
+    expect(wrapper.text()).not.toContain('Internships')
+    expect(wrapper.text()).not.toContain('Fresher Jobs')
+    expect(wrapper.text()).not.toContain('My Applications')
+    expect(wrapper.text()).toContain(staticContent.savedRolesData.savedRolesLabel)
     expect(wrapper.text()).toContain('0')
     expect(wrapper.find('svg').exists()).toBe(true)
+    expect(wrapper.find('nav').exists()).toBe(false)
+    expect(wrapper.findAll('a')).toHaveLength(2)
   })
 
-  it('links to home and the saved jobs page without creating either page', async () => {
+  it('keeps the home brand link on the left and Saved Roles on the right', async () => {
     const router = createTestRouter()
     await router.push(routePaths.home)
     await router.isReady()
@@ -47,10 +50,12 @@ describe('Tabs', () => {
       global: { plugins: [router, createPinia()] },
     })
 
-    expect(wrapper.get(`a[href="${routePaths.home}"]`).attributes('href')).toBe(routePaths.home)
-    expect(wrapper.get(`a[href="${routePaths.savedJobs}"]`).attributes('href')).toBe(
-      routePaths.savedJobs,
-    )
+    const header = wrapper.get('header')
+    const homeLink = wrapper.get(`a[href="${routePaths.home}"]`)
+    const savedRolesLink = wrapper.get(`a[href="${routePaths.savedJobs}"]`)
+    expect(homeLink.text()).toBe(staticContent.fresherFriendLabel)
+    expect(header.element.firstElementChild).toBe(homeLink.element)
+    expect(header.element.lastElementChild).toBe(savedRolesLink.element)
   })
 
   it('uses the primary color and contrasting text when the saved jobs route is active', async () => {
