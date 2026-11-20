@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { Bookmark } from '@lucide/vue'
+import { storeToRefs } from 'pinia'
 import { RouterLink, useRoute } from 'vue-router'
 import staticContent from '../mocks/getStaticContent.json'
 import { routePaths } from '../router/paths'
+import { useSavedRolesStore } from '../stores/savedRoles'
 
 defineOptions({
   name: 'TabsNavigation',
@@ -25,7 +27,8 @@ const tabs = staticContent.tabs.map((tab) => {
 })
 
 const route = useRoute()
-const savedRolesCount = 0
+const savedRoles = useSavedRolesStore()
+const { savedRoleCount: savedRolesCount } = storeToRefs(savedRoles)
 </script>
 
 <template>

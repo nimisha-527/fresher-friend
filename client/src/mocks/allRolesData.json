@@ -1,73 +1,501 @@
-{
-    "roles": [
-        {
-            "id": 1,
-            "title": "Software Engineer Intern",
-            "companyName": "TechCorp",
-            "companyLogo": "https://example.com/logos/techcorp.png",
-            "location": "Bangalore",
-            "roleType": "Internship",
-            "workMode": "Hybrid",
-            "type": "Internship",
-            "minSalary": "2.4 LPA",
-            "maxSalary": "3.5 LPA",
-            "salaryPeriod": "annual",
-            "description": "Work on cutting-edge technologies and contribute to real-world projects.",
-            "categories": [
-                "SAP-ESPP-Support-Consultant",
-                "SAP-Consultant",
-                "SAP-Support-Engineer",
-                "Sap-Functional-Consultant"
-            ],
-            "parentCategories": [
-                "Developer"
-            ]
-        },
-        {
-            "id": 2,
-            "title": "Frontend Developer",
-            "companyName": "WebSolutions",
-            "companyLogo": "https://example.com/logos/websolutions.png",
-            "location": "Remote India",
-            "workMode": "Remote",
-            "roleType": "Fresher",
-            "type": "Full-time",
-            "minSalary": "35,000/month",
-            "maxSalary": "50,000/month",
-            "salaryPeriod": "monthly",
-            "description": "Develop and maintain user interfaces for web applications.",
-            "categories": [
-                "Technical-Sourcer",
-                "Technical-Recruiter",
-                "IT-Recruiter",
-                "Talent-Acquisition-Specialist"
-            ],
-            "parentCategories": [
-                "Human Resources"
-            ]
-        },
-        {
-            "id": 3,
-            "title": "Data Analyst Intern",
-            "companyName": "DataInsights",
-            "companyLogo": "https://example.com/logos/datainsights.png",
-            "location": "Mumbai",
-            "roleType": "Internship",
-            "workMode": "On-site",
-            "type": "Internship",
-            "minSalary": null,
-            "maxSalary": null,
-            "salaryPeriod": "hourly",
-            "description": "Analyze data sets and generate actionable insights for business decisions.",
-            "categories": [
-                "Technical-Business-Analyst",
-                "Business-Analyst",
-                "Aml-Analyst",
-                "Financial-Crime-Business-Analyst"
-            ],
-            "parentCategories": [
-                "Data Science"
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "title": "Intern – Java",
+        "companyName": "RMgX",
+        "companyLogo": "https://cdn-images.himalayas.app/2mf3jb2x3vibbc4qnldye8huhcv1",
+        "location": "Other",
+        "roleType": "Internship",
+        "workMode": "Remote",
+        "type": "Intern",
+        "minSalary": "0.2 LPA",
+        "maxSalary": "0.3 LPA",
+        "salaryPeriod": "monthly",
+        "description": "<h3>ROLE EXPECTATIONS</h3><p>At <a href=\"https://himalayas.app/companies/rmgx\">RMgX</a> Technologies, we are looking for enthusiastic and passionate Interns who want to build their career in Java development. You will get exposure to real-world projects, learn modern frameworks, and work closely with experienced mentors on innovative solutions. We expect you to be eager to learn, take ownership of tasks, and show commitment to completing assignments on time.</p><h3>DUTIES AND RESPONSIBILITIES</h3><ul>\n<li><p>Assist the development team in building and maintaining Java-based applications.</p></li>\n<li><p>Write clean, testable, and efficient code under guidance.</p></li>\n<li><p>Learn and apply concepts of REST APIs, Spring Boot, and Hibernate in live projects.</p></li>\n<li><p>Support in documentation, testing, and debugging of applications.</p></li>\n<li><p>Participate in code reviews and knowledge-sharing sessions.</p></li>\n<li><p>Work as part of an Agile team to deliver assignments within deadlines.</p></li>\n</ul><ul>\n<li><p>Pursuing B.E/B.Tech/MCA in Computer Science, IT, or related fields.</p></li>\n<li><p>Final-year students or recent graduates may apply.</p></li>\n</ul><h3>WORK EXPERIENCE</h3><ul>\n<li><p>Academic projects or internships in Core Java.</p></li>\n<li><p>Exposure to OOPS concepts, data structures, and basic SQL.</p></li>\n<li><p>Familiarity with Java frameworks (Spring/Hibernate) is a plus.</p></li>\n</ul><h3>SKILLS, ABILITIES &amp; KNOWLEDGE</h3><ul>\n<li><p>Good knowledge of Core Java (Java 8 and above).</p></li>\n<li><p>Understanding of OOPS concepts and data structures.</p></li>\n<li><p>Familiarity with Spring framework, Hibernate, REST APIs (academic/project exposure acceptable).</p></li>\n<li><p>Basic knowledge of front-end technologies like HTML, CSS, JavaScript, jQuery.</p></li>\n<li><p>Database understanding (MySQL/Oracle preferred).</p></li>\n<li><p>Knowledge of Git, Maven, and unit testing will be an added advantage.</p></li>\n<li><p>Eagerness to learn, problem-solving mindset, and ability to work in a team.</p></li>\n</ul><ul>\n<li>Flexible working hours</li>\n<li>Health Insurance and Personal Accident Insurance</li>\n<li>BYOD (Bring Your Own Device) Benefit</li>\n<li>Laptop Buyback Scheme</li>\n</ul><p><a href=\"https://himalayas.app/companies/rmgx\">RMgX</a> Technologies is a Digital Product Engineering firm focused on AI-powered product development, digital transformation, and complex systems integration. We are seeking a Data Specialist to play a key role in a mission-critical project. The role demands deep expertise in databases, ETL processes, and data workflows, with a strong sense of ownership and structured way of working. You will play a critical role in ensuring reliable, accurate, and scalable data systems that power the products and systems developed by <a href=\"https://himalayas.app/companies/rmgx\">RMgX</a></p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Java-Developer",
+            "Software-Engineer",
+            "Software-Developer",
+            "Graduate-Software-Engineer"
+        ],
+        "parentCategories": [
+            "Developer"
+        ],
+        "skills": [
+            "Java",
+            "Spring Boot",
+            "Hibernate"
+        ],
+        "applicationLink": "https://himalayas.app/companies/rmgx/jobs/intern-java-8574784410?utm_source=api",
+        "pubDate": 1795110668,
+        "expiryDate": 1800294668
+    },
+    {
+        "id": 3,
+        "title": "SDR Intern",
+        "companyName": "Weekday",
+        "companyLogo": "",
+        "location": "Remote India",
+        "roleType": "Internship",
+        "workMode": "Remote",
+        "type": "Intern",
+        "minSalary": "0.1 LPA",
+        "maxSalary": "0.2 LPA",
+        "salaryPeriod": "monthly",
+        "description": "<h3>SDR Intern | <a href=\"https://himalayas.app/companies/weekday-com\">Weekday</a> AI</h3><h3>Role overview</h3><ul>\n<li>Remote | 6-Month Paid Internship</li>\n<li>11 AM – 7 PM (flexible) | 6 days/week</li>\n<li>Stipend: ₹15,000 fixed + ₹5,000 performance incentive</li>\n</ul><h3>Learn Sales the Way It Actually Happens.</h3><p>At <a href=\"https://himalayas.app/companies/weekday-com\">Weekday</a> AI, you won't spend your internship shadowing someone else. You'll be on the phone from week one.</p><p>As a Sales Development Representative (SDR) Intern on our <strong>Contingency team</strong>, you'll reach out to companies, start conversations with decision-makers, and book demos for our recruitment-as-a-service offering. Every demo you book is a direct contribution to the company's revenue pipeline</p><p>You don't need to come in knowing sales. If you communicate well, can handle a \"no\" and keep going, and want to get better every day, we'll teach you the rest</p><h3>About <a href=\"https://himalayas.app/companies/weekday-com\">Weekday</a> AI</h3><p><a href=\"https://himalayas.app/companies/weekday-com\">Weekday</a> AI is building a better way for companies to hire engineering talent. Our platform helps companies find high-quality, peer-recommended candidates through intelligent sourcing, automated outreach, and instant reference checks.</p><p>Through our Contingency service, we work as an extension of a company's hiring team and deliver vetted candidates for its open roles.</p><p>We're a lean, fast-moving, Y Combinator-backed startup where people take ownership early and see the impact of their work</p><h3>What You'll Do</h3><ul>\n<li>Make outbound calls to prospective customers, about 100 dials a day.</li>\n<li>Have first conversations with founders, hiring managers, and HR leaders about their hiring needs.</li>\n<li>Pitch <a href=\"https://himalayas.app/companies/weekday-com\">Weekday</a>'s Contingency service clearly and briefly.</li>\n<li>Book qualified demos for the sales team, with a target of 2 a day.</li>\n<li>Handle objections and follow up with prospects until a meeting is set.</li>\n<li>Keep your activity, conversations, and pipeline up to date </li>\n</ul><h3>What You'll Learn</h3><ul>\n<li>Cold calling: how to open a conversation with a stranger and earn the next two minutes</li>\n<li>Communication: how to speak clearly and confidently with decision-makers</li>\n<li>Objection handling: how to respond to \"not interested,\" \"send me an email,\" and \"we already have a vendor.\"</li>\n<li>Pipeline discipline: how volume, consistency, and follow-ups turn into results</li>\n<li>Resilience: how to stay sharp and motivated in a role with clear daily targets</li>\n</ul><p>These skills are a strong foundation for careers in sales, business development, account management, growth, and entrepreneurship.</p><h3>Who We're Looking For</h3><p>You don't need a perfect resume or previous sales experience. We're looking for someone who:</p><ul>\n<li>Communicates clearly and confidently on the phone</li>\n<li>Enjoys talking to people and doesn't mind rejection</li>\n<li>Is target-driven and enjoys measurable goals</li>\n<li>Is consistent and disciplined about daily activity</li>\n<li>Learns quickly and acts on feedback</li>\n<li>has recently completed a Bachelor's degree, preferably 2025/2026 graduates</li>\n</ul><p>Prior sales or calling experience is a bonus, not a requirement. What matters most is your communication, energy, and willingness to put in the reps</p><h3>Why <a href=\"https://himalayas.app/companies/weekday-com\">Weekday</a>?</h3><ul>\n<li>Real conversations. You'll talk to real decision-makers at real companies every day.</li>\n<li>Real impact. Every demo you book feeds directly into revenue.</li>\n<li>Real learning. You'll learn by doing, with coaching from the people who do it every day.</li>\n<li>Real rewards. On top of the fixed stipend, you'll earn a performance incentive for hitting your targets.</li>\n</ul><p>If you want an internship where you learn fast, own clear targets, and build skills that stay with you long after it ends, apply.</p><h3>\n<a href=\"https://himalayas.app/companies/weekday-com\">Weekday</a> AI | Y Combinator-backed</h3><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Sales-Development-Representative",
+            "Sales-And-Business-Development-Intern",
+            "Business-Development-Representative",
+            "Lead-Generation-Specialist"
+        ],
+        "parentCategories": [
+            "Sales",
+            "Growth"
+        ],
+        "skills": [
+            "Sales",
+            "Lead Generation",
+            "Communication"
+        ],
+        "applicationLink": "https://himalayas.app/companies/weekday-com/jobs/sdr-intern?utm_source=api",
+        "pubDate": 1795106340,
+        "expiryDate": 1800221406
+    },
+    {
+        "id": 4,
+        "title": "Junior Social Media Specialist",
+        "companyName": "bored panda",
+        "companyLogo": "",
+        "location": "Other",
+        "roleType": "Full-Time",
+        "workMode": "Remote",
+        "type": "Full Time",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<p>We’re Bored Panda Group – one of the world’s leading tech-driven media and entertainment companies, creating uplifting content in 17 languages for people of all ages. It all started in 2009 with a small online project that grew into an award-winning publisher, followed by Crafty Panda, the DIY channel that reached #1 on Facebook worldwide. Today, we’re three companies strong: , Bored Panda Studios and Spike. What connects us is the way we work: we combine creativity with data and AI, experiment fast and scale what works. The result? 660M+ page views and 60B+ views every year. Our 300+ Pandas work across 50 countries, with two offices in Vilnius, Lithuania – and here, your work can reach millions of people every day.<br><br> is a leading global content publisher, entertaining millions of readers every day by feeding their curiosity with human-curated stories. Covering everything from humour and fascinating facts to celebrity stories and the hottest trending topics, this art and pop culture magazine consistently ranks among the top 5 digital content publishers. Our 100+ writers, editors, photo editors, SEO and social media experts track what readers love in real time to find stories worth every minute. Readers agree: they spend around 1 billion minutes with our content every year. Right now, we’re looking for a talented Junior Social Media Specialist to join the team behind it all. Get ready to cure boredom all over the world!</p><h3>What You Will Do:</h3><ul>\n<li><p>Assist in managing and growing our Facebook account;</p></li>\n<li><p>Create, schedule, and publish engaging content (text, images, and short videos);</p></li>\n<li><p>Monitor comments, messages, and audience interactions, responding in a timely and professional manner;</p></li>\n<li><p>Track performance metrics and prepare basic reports on engagement and growth;</p></li>\n<li><p>Stay up to date with social media trends, tools, and best practices;</p></li>\n<li><p>Collaborate with the marketing team to support campaigns and promotions.</p></li>\n</ul><h3>What We Expect:</h3><ul>\n<li><p>Some experience managing social media accounts (personal, freelance, or professional);</p></li>\n<li><p>Familiarity with major platforms such as Facebook, Instagram, X, Threads, or similar;</p></li>\n<li><p>Basic understanding of social media analytics and content performance;</p></li>\n<li><p>Strong written communication skills and attention to detail;</p></li>\n<li><p>Creative mindset with an eye for engaging content;</p></li>\n<li><p>Ability to work independently and as part of a team;</p></li>\n<li><p>Experience with social media scheduling tools (e.g., Hootsuite, Buffer, etc.);</p></li>\n<li><p>Basic graphic design skills (Canva, Adobe tools, or similar);</p></li>\n<li><p>Understanding of paid social media advertising.</p></li>\n</ul><h3>What We Offer:</h3><ul>\n<li><p>Collaboration with a diverse, international team of talented individuals;</p></li>\n<li><h3>Flexibility to work fully remotely;</h3></li>\n<li><p>A supportive and encouraging work environment;</p></li>\n<li><p>The opportunity to contribute and grow with new projects.</p></li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Social-Media-Specialist",
+            "Social-Media-Coordinator",
+            "Social-Media-Associate",
+            "Digital-Content-Specialist"
+        ],
+        "parentCategories": [],
+        "skills": [
+            "Social Media",
+            "Content Creation",
+            "Data Analysis"
+        ],
+        "applicationLink": "https://himalayas.app/companies/jobs-boredpanda/jobs/junior-social-media-specialist?utm_source=api",
+        "pubDate": 1795106382,
+        "expiryDate": 1800204715
+    },
+    {
+        "id": 5,
+        "title": "Audio Description Script Writer - Hindi",
+        "companyName": "Keywords Studios Plc",
+        "companyLogo": "https://cdn-images.himalayas.app/l0mvkebddwgsd42q9g0cdg3j7bzw",
+        "location": "Remote India",
+        "roleType": "Contract",
+        "workMode": "Remote",
+        "type": "Contractor",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<p>Descriptive Video Works (owned by Keywords Studios ) is recognized in the audiovisual industry as a leading provider of Audio Description (AD) in North America and beyond: . DVW is building a global team to manage the creation of audio description for blind and low-vision consumers of film and television content for its growing international client base. We are therefore looking for experienced native Hindi-speaking audio description experts who share our commitment to accessibility to join our team. </p><p>DVW is seeking experienced freelance Hindi language audio description script writers and/or QC'ers to join our growing team.</p><h3>Overview:</h3><ul>\n<li>Write and/or proofread Hindi audio description scripts for film and television content.</li>\n<li>Ability to meet deadlines as determined by DVW Project Manager and communicate any issues that could impact the delivery of the script.</li>\n<li>Ensure that AD scripts meet DVW's and client's quality standards.</li>\n<li>QC/proofread AD scripts by other writers.</li>\n<li>Work with other writers in a collaborative team environment.</li>\n<li>Ability to work remotely.</li>\n<li>Participate in occasional meetings, conference calls as needed.</li>\n</ul><h3>Requirements</h3><ul>\n<li>Passion for accessibility and inclusion.</li>\n<li>Minimum of 1 year of Audio Description script writing or AD script QC experience.</li>\n<li>Excellent communication skills in Hindi and English.</li>\n<li>Knowledge of other Indian languages a plus.</li>\n</ul><h3>Benefits</h3><h3>Fully remote work from home.</h3><h3>Flexible hours.</h3><p><em>Keywords Studios is dedicated to following a well-established Equal Opportunities Policy. We endeavor to create a workplace, which provides for equal opportunities for all employees and potential employees.</em></p><p><em>PERSONAL DATA PROTECTION POLICY</em></p><p><em>Keywords Studios is strongly committed to protecting your personal information. By sending your CV/Resume, you are agreeing to our terms and conditions and consent to your data being managed and retained in accordance with our data privacy and retention policy.</em></p><p><em></em></p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Audio-Description-Writer",
+            "Script-Writer",
+            "Quality-Control-Editor",
+            "Accessibility-Writing"
+        ],
+        "parentCategories": [],
+        "skills": [
+            "Audio Description",
+            "Hindi",
+            "Proofreading"
+        ],
+        "applicationLink": "https://himalayas.app/companies/keywords-studios-plc/jobs/audio-description-script-writer-hindi?utm_source=api",
+        "pubDate": 1795106392,
+        "expiryDate": 1800197026
+    },
+    {
+        "id": 6,
+        "title": "Sales Officer Trainee - North Branch",
+        "companyName": "Mondelēz International",
+        "companyLogo": "https://cdn-images.himalayas.app/ack5ckz6yoox3w6fgi5txwiagycy",
+        "location": "Other",
+        "roleType": "Internship",
+        "workMode": "On-Site",
+        "type": "Intern",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<h3>Job Description</h3><p><b>Are You Ready to Make It Happen at <a href=\"https://himalayas.app/companies/mondelez-international\">Mondelēz International</a>?</b></p><p><b>Join our Mission to Lead the Future of Snacking. Make It Matter.</b></p><p>As an organization we are committed to developing the next generation of Makers and Bakers. Joining us at an early career stage in our fast paced and ever changing environment will enable you to do more, learn more and grow more.  You will be encouraged to step outside your comfort zone– you may even surprise yourself!  We will ensure you are given the support you need to be at your best and enable you to be yourself and bring passion and personality. Here you can lean in and speak up and bring your own flavor.</p><h3>More about this role</h3><p>Sales Officer Trainee _ North Branch Batch 2026 </p>No Relocation support available<h3><b>Business Unit Summary</b></h3><h3>Mondelez India Foods Private Limited (formerly Cadbury India Ltd.) has been in India for over 70 years, making sure our mouth-watering and well-loved local and global brands such as <i>Cadbury</i> chocolates, <i>Bournvita</i> and <i>Tang</i> powdered beverages, <i>Oreo</i> and <i>Cadbury Bournvita</i> biscuits, and <i>Halls</i> and <i>Cadbury Choclairs Gold</i> candies get safely into our customers hands—and mouths<i>.</i> Headquartered in Mumbai, the company has more than 3,300 employees proudly working across sales offices in New Delhi, Mumbai, Kolkata and Chennai and in manufacturing facilities at Maharashtra, Madhya Pradesh, Himachal Pradesh and Andhra Pradesh, at our global Research &amp; Development Technical Centre and Global Business Hub in Maharashtra and in a vast distribution network across the country. We are also proud to be recognised by Avatar as the Best Companies for Women in India in 2019 – the fourth time we’ve received this award.</h3><p><a href=\"https://himalayas.app/companies/mondelez-international\">Mondelēz International</a> is an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, gender, sexual orientation or preference, gender identity, national origin, disability status, protected veteran status, or any other characteristic protected by law.</p><h3><b>Job Type</b></h3>Intern (Fixed Term)InternsEarly Careers<p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Sales-Trainee",
+            "Sales",
+            "Business-Development-Representative",
+            "Sales-Intern"
+        ],
+        "parentCategories": [
+            "Sales"
+        ],
+        "skills": [
+            "Sales",
+            "Marketing",
+            "Communication"
+        ],
+        "applicationLink": "https://himalayas.app/companies/mondelez-international/jobs/sales-officer-trainee-north-branch?utm_source=api",
+        "pubDate": 1795106402,
+        "expiryDate": 1800184823
+    },
+    {
+        "id": 7,
+        "title": "Digital Marketing & Organic Growth Intern",
+        "companyName": "IIDE",
+        "companyLogo": "https://cdn-images.himalayas.app/x786p5mgnhbix9xl7f1q1odrvn7t",
+        "location": "Remote India",
+        "roleType": "Internship",
+        "workMode": "Remote",
+        "type": "Intern",
+        "minSalary": "0.1 LPA",
+        "maxSalary": "0.1 LPA",
+        "salaryPeriod": "monthly",
+        "description": "<div>## Summary<br>\n</div><div>Migrizo, a leader in global mobility solutions assisting professionals with international career and immigration journeys, seeks a driven Digital Marketing &amp; Organic Growth Intern. This full-time, remote role offers a monthly stipend of ₹10,000. The successful candidate will play a vital part in expanding the company's digital footprint and driving brand awareness through strategic organic marketing efforts.<br>\n</div><div>## Responsibilities<br>\n</div><ul>\n<li>Conduct keyword analysis and optimize on-page elements to enhance search engine rankings and website visibility.<br>\n</li>\n<li>Develop and produce high-quality, SEO-optimized articles and website copy based on thorough research.<br>\n</li>\n<li>Strategize, design, and distribute organic content to grow Migrizo's LinkedIn community.<br>\n</li>\n<li>Engage in targeted marketing on Quora and Reddit by contributing valuable insights to relevant discussions.<br>\n</li>\n<li>Establish, maintain, and refine business profiles across various online directories.<br>\n</li>\n<li>Perform in-depth research on keywords, content gaps, and competitor strategies.<br>\n</li>\n<li>Organize and oversee a structured content calendar to ensure consistent publishing schedules.<br>\n</li>\n<li>Monitor and report on key performance metrics, including site visibility and the effectiveness of organic campaigns.<br>\n</li>\n</ul><div>## Requirements<br>\n</div><ul>\n<li>Open to fresh graduates and students with a strong interest in digital marketing.<br>\n</li>\n<li>Possess excellent written English proficiency and effective communication abilities.<br>\n</li>\n<li>Demonstrate a genuine enthusiasm for SEO, blogging, and content marketing strategies.<br>\n</li>\n<li>Have a foundational understanding of LinkedIn and other digital platforms.<br>\n</li>\n<li>Exhibit strong capabilities in research, writing, and data analysis.<br>\n</li>\n<li>Be self-directed and capable of managing tasks independently within a remote work setting.<br>\n</li>\n<li>Familiarity with tools such as Google Search Console, Google Analytics, or Canva is considered a plus.<br>\n</li>\n</ul><br><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Digital-Marketing-Intern",
+            "SEO-Specialist",
+            "Content-Marketing-Specialist",
+            "Growth-Marketing-Intern"
+        ],
+        "parentCategories": [
+            "Marketing",
+            "Content Creator"
+        ],
+        "skills": [
+            "SEO",
+            "Content Writing",
+            "Digital Marketing"
+        ],
+        "applicationLink": "https://himalayas.app/companies/iide/jobs/digital-marketing-organic-growth-intern?utm_source=api",
+        "pubDate": 1795106376,
+        "expiryDate": 1800179793
+    },
+    {
+        "id": 8,
+        "title": "Management Trainee - Technical Recruitment",
+        "companyName": "Purplebox",
+        "companyLogo": "https://cdn-images.himalayas.app/e3xmi5a978a34q0w3pima7lfdvc9",
+        "location": "Other",
+        "roleType": "Internship",
+        "workMode": "On-Site",
+        "type": "Intern",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<p>We are searching for a reliable, organized Management Trainee to join our organization. The Management Trainee's responsibilities include completing all assigned tasks, which may include, performing duties in different departments, gaining knowledge of operations, attending meetings and workshops, providing support and suggestions for improvement, updating records, and preparing documentation. You should also be able to complete any required evaluations.</p><p>To be successful as a Management Trainee, you should have superb attention to detail and be able to promptly identify problems. Outstanding candidates will have great leadership, problem-solving, and interpersonal skills.</p><p>Your role will also include things like, Researching, amending applicant’s CVs, obtaining references, taking calls and questions etc. By shadowing more experienced staff, you’ll learn on the job and pick up valuable knowledge to help you on your career path. You could specialise in human resources department and recruit for internal positions.</p><h3>Responsibilities:</h3><ul>\n<li>Completing all assigned tasks and assisting with day-to-day operations<br>• Participating in meetings, workshops, and other learning opportunities<br>• Observing and learning from experienced team members<br>• Gaining knowledge of company policies, protocols, and processes<br>• Fulfilling any requirements and meeting goals set out at the start of the traineeship<br>• Following all company regulations, and health and safety codes<br>• Preparing documents and updating records</li>\n</ul><h3> Requirements:</h3><ul>\n<li>Bachelor's degree in Engineering and/or Management<br>• Excellent written, verbal, and interpersonal skills</li>\n</ul><h3>• Proficiency in MS Office</h3><h3>• Strong leadership skills</h3><ul>\n<li>A positive attitude and willingness to learn along with excellent time management</li>\n</ul><p>We are recruiting specialists with more than a decade of expertise in building teams from ground-up for organisations in various domains such as Enterprise, SaaS, Ecommerce, Mobile and HFT. Our core expertise lies in deep tech and leadership hiring.</p><p>As a team who has been on both sides of the table, Corporate as well as Consulting, we know how to build amazing teams.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Management-Trainee",
+            "Recruitment-Intern",
+            "Recruiting-Coordinator",
+            "Human-Resources-Assistant",
+            "Technical-Recruiter"
+        ],
+        "parentCategories": [
+            "Management",
+            "Human Resources"
+        ],
+        "skills": [
+            "Recruitment",
+            "Documentation",
+            "Communication"
+        ],
+        "applicationLink": "https://himalayas.app/companies/purplebox/jobs/management-trainee-technical-recruitment?utm_source=api",
+        "pubDate": 1795106417,
+        "expiryDate": 1800141952
+    },
+    {
+        "id": 9,
+        "title": "Customer Engineer I",
+        "companyName": "NCR Atleos",
+        "companyLogo": "https://cdn-images.himalayas.app/m34uxet2e1l0v26dtvk4rta1vix4",
+        "location": "Other",
+        "roleType": "Full-Time",
+        "workMode": "On-Site",
+        "type": "Full Time",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<h3>About <a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a>\n</h3><p><a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a>, headquartered in Atlanta, is a leader in expanding financial access. Our dedicated 20,000 employees optimize the branch, improve operational efficiency and maximize self-service availability for financial institutions and retailers across the globe.</p><h3>Customer Engineer (I)</h3><p>Offers of employment are conditional upon passage of screening criteria applicable to the job.</p><p><b>EEO Statement</b><br><a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a> is an equal-opportunity employer. It is <a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a> policy to hire, train, promote, and pay associates based on their job-related qualifications, ability, and performance, without regard to race, color, creed, religion, national origin, citizenship status, sex, sexual orientation, gender identity/expression, pregnancy, marital status, age, mental or physical disability, genetic information, medical condition, military or veteran status, or any other factor protected by law.</p><h3>Statement to Third Party Agencies</h3><p>To ALL recruitment agencies: <a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a> only accepts resumes from agencies on the <a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a> preferred supplier list. Please do not forward resumes to our applicant tracking system, <a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a> employees, or any <a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a> facility. <a href=\"https://himalayas.app/companies/ncr-atleos\">NCR Atleos</a> is not responsible for any fees or charges associated with unsolicited resumes.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Customer-Engineer",
+            "Field-Service-Engineer",
+            "Technical-Support-Engineer"
+        ],
+        "parentCategories": [
+            "Developer"
+        ],
+        "skills": [
+            "Customer Support",
+            "Engineering",
+            "Troubleshooting"
+        ],
+        "applicationLink": "https://himalayas.app/companies/ncr-atleos/jobs/customer-engineer-i?utm_source=api",
+        "pubDate": 1795106382,
+        "expiryDate": 1800135486
+    },
+    {
+        "id": 10,
+        "title": "Content Writer (Project-Based)",
+        "companyName": "BuzzFeed Inc.",
+        "companyLogo": "https://cdn-images.himalayas.app/nasrspxzhleq4cn09mht6ocqfc01",
+        "location": "Remote India",
+        "roleType": "Contract",
+        "workMode": "Remote",
+        "type": "Contractor",
+        "minSalary": "0.5 LPA",
+        "maxSalary": "0.5 LPA",
+        "salaryPeriod": "monthly",
+        "description": "<h3>About BuzzFeed, Inc.</h3><p>BuzzFeed, Inc. (Ticker: BZFD) is home to the best of the internet. Across food, news, pop culture, and commerce, our brands drive conversation and inspire what audiences watch, read, buy, and obsess over next. Born on the internet in 2006, BuzzFeed, Inc. is committed to improving it: providing trusted, quality, brand-safe news and entertainment to hundreds of millions of people; making content on the internet more inclusive, empathetic, and creative; and inspiring our audience to live better lives. We'll continue to recruit the best founders and creators to join us in this mission, with more additions like HuffPost to come.</p><h3>Applicants for this role must be based in India.</h3><p><strong>Business Area: Content</strong><strong><br>Job Category: Content</strong><strong><br>Monthly: 45,000 per month INR</strong><strong><br>Union Status: </strong>Non-Union</p><p><em><a href=\"https://himalayas.app/companies/buzzfeed-inc\">BuzzFeed Inc.</a> is committed to fair and equitable compensation practices. We reserve the ability to adjust the final compensation for this role based on the final candidate's experience, skillset, certifications, and geography.</em></p><h3>The Role</h3><ul><li>\n<p>Are you obsessed with internet culture? Do you love turning trending moments into something people can’t stop reading about? BuzzFeed’s India team is looking for curious, internet-savvy writers to craft engaging, entertaining, and shareable stories for our US audience. If you have a keen eye for pop culture moments, a sharp sense of humor, and know how to make people <em>click</em>, this role is for you.</p>\n<h3>What you'll do</h3>\n<ul>\n<li>Pitch and write engaging listicles, quizzes, and feature stories across pop culture, entertainment, and lifestyle, centred around the US audience.</li>\n<li>Turn trending conversations and niche topics into compelling, high-performing content.</li>\n<li>Work with the editor to refine content, optimize headlines, and package stories for maximum impact. </li>\n<li>Take ownership of your ideas from pitch to publication and iterate based on editorial feedback and performance.</li>\n<li>Spot great stories before everyone else does.</li>\n</ul>\n<h3>What we're looking for</h3>\n<ul>\n<li><strong>Applicants for this role must be based in India.</strong></li>\n<li>A creative and versatile writer with 1–3 years of experience in content, editorial, or journalism. Bonus points if you have previously worked with a digital content company.</li>\n<li>Freshers who show promise with exceptional creative skills will also be considered.</li>\n<li>Excellent written English and a strong grasp of grammar.</li>\n<li>A genuine curiosity about internet culture, pop culture, and why people share content.</li>\n<li>Strong research skills and attention to detail.</li>\n<li>Ability to think like a reader and package stories with compelling headlines and hooks.</li>\n<li>Organized, deadline-driven, and able to juggle multiple stories at once.</li>\n<li>Someone who takes initiative, works independently, and is eager to learn from data and feedback.</li>\n<li>Comfortable with CMS tools.</li>\n</ul>\n<br><p>This is a full-time 40-hour-a-week contract position, Monday through Friday, with the ability to work remotely <strong>as long as you are based in India</strong>. Contracts are 3 months to start with the potential opportunity to extend to a year.</p>\n<p>If you think this is you, please submit your materials below AND fill out this <strong>Google Form</strong>. Both components are required for a complete submission. We'll be in touch if it's a fit!</p>\n</li></ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Content-Writer",
+            "Website-Content-Writer",
+            "Digital-Copywriter",
+            "Staff-Writers",
+            "Journalist"
+        ],
+        "parentCategories": [
+            "Content Creator"
+        ],
+        "skills": [
+            "Content Writing",
+            "Editing",
+            "Research"
+        ],
+        "applicationLink": "https://himalayas.app/companies/buzzfeed-inc/jobs/content-writer-project-based?utm_source=api",
+        "pubDate": 1795106473,
+        "expiryDate": 1799926082
+    },
+    {
+        "id": 11,
+        "title": "HR Intern",
+        "companyName": "Kantiv (formerly Joist AI)",
+        "companyLogo": "https://cdn-images.himalayas.app/lvckupcrgqbirmlmcbgyvdixui3u",
+        "location": "Remote India",
+        "roleType": "Internship",
+        "workMode": "Remote",
+        "type": "Full Time",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<h3>HR Intern – Recruitment Coordination</h3><p><strong>Location:</strong> Remote<br><strong>Experience:</strong> 0–1 year<br><strong>Duration:</strong> 3–6 months<br><strong>Role Type:</strong> Internship</p><h3>About Kantiv</h3><p>Kantiv is an early-stage, AI-powered SaaS startup transforming the Architecture, Engineering, and Construction (AEC) industry. We are building a pursuit intelligence platform that helps AEC firms leverage their client knowledge, project history, proposals, and relationships to identify and pursue new business opportunities more effectively.</p><p>Founded in 2022, Kantiv is a US-headquartered, fully remote organization with a growing team across the US and India. Backed by investors including Building Ventures, SignalFire, and Diverge, we are building innovative solutions at the intersection of AI and the AEC industry.</p><h3>\n<br>About the Role</h3><p>We are looking for a proactive and organized HR Intern to support our Talent Acquisition team with recruitment coordination and day-to-day HR activities. The role will primarily involve interview scheduling, candidate communication, follow-ups, and maintaining recruitment trackers.</p><p>This is a great opportunity for someone looking to gain practical exposure to recruitment and HR operations in a fast-paced startup environment.</p><h3>Key Responsibilities</h3><ul>\n<li><p>Coordinate and schedule interviews between candidates and hiring managers.</p></li>\n<li><p>Communicate with candidates regarding interview schedules, updates, and feedback.</p></li>\n<li><p>Follow up with candidates and interviewers to ensure timely closures.</p></li>\n<li><p>Maintain and update candidate information and recruitment trackers in the ATS.</p></li>\n<li><p>Coordinate interview rounds and ensure candidates are informed about the process.</p></li>\n<li><p>Assist with posting job openings across relevant platforms.</p></li>\n<li><p>Support basic resume screening and candidate shortlisting.</p></li>\n<li><p>Ensure a smooth and positive candidate experience throughout the recruitment process.</p></li>\n<li><p>Assist with onboarding coordination and pre-joining formalities when required.</p></li>\n<li><p>Support other day-to-day HR activities as needed.</p></li>\n</ul><h3>Skills &amp; Qualifications</h3><ul>\n<li><p>Pursuing or recently completed a degree in HR, Business Administration, or a related field.</p></li>\n<li><p>Strong verbal and written communication skills.</p></li>\n<li><p>Good coordination and organizational skills.</p></li>\n<li><p>Comfortable communicating with candidates and internal stakeholders.</p></li>\n<li><p>Ability to multitask and manage schedules effectively.</p></li>\n<li><p>Attention to detail and strong follow-up skills.</p></li>\n<li><p>Basic knowledge of MS Excel / Google Sheets.</p></li>\n<li><p>Familiarity with LinkedIn and recruitment platforms is an added advantage.</p></li>\n<li><p>Ability to work independently in a remote environment.</p></li>\n</ul><h3>What You'll Gain</h3><ul>\n<li><p>Hands-on exposure to recruitment processes.</p></li>\n<li><p>Experience working with hiring managers and candidates.</p></li>\n<li><p>Exposure to ATS platforms and HR operations.</p></li>\n<li><p>Opportunity to learn and grow within a startup environment.</p></li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "HR-Intern",
+            "Human-Resources-Intern",
+            "HR-Coordinator-Intern",
+            "Human-Resources-Internship",
+            "HR-Operations-Intern",
+            "HR-Executive-Intern",
+            "HR-Recruiting-Intern",
+            "HR-Services-Intern",
+            "HR-Internships",
+            "Internship-In-Human-Resources"
+        ],
+        "parentCategories": [],
+        "skills": [
+            "HR Coordination",
+            "Talent Acquisition",
+            "Communication"
+        ],
+        "applicationLink": "https://himalayas.app/companies/kantiv-formerly-joist-ai/jobs/hr-intern?utm_source=api",
+        "pubDate": 1794633101,
+        "expiryDate": 1799817101
+    },
+    {
+        "id": 12,
+        "title": "English Language Expert (India)",
+        "companyName": "micro1",
+        "companyLogo": "https://cdn-images.himalayas.app/91oa56akgt3qjqc1nh3uoruub40c",
+        "location": "Remote India",
+        "roleType": "Contract",
+        "workMode": "Remote",
+        "type": "Contractor",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "hourly",
+        "description": "<p><strong>Role Title: </strong>English Language Expert (India)</p><p><strong>Role Type:</strong> Contractor</p><p><strong>Location:</strong> India, Remote</p><p><a href=\"https://himalayas.app/companies/micro1\">micro1</a> is engaging English Language Experts (India) to contribute linguistic and cultural expertise to a dynamic customer project. In this role, you'll apply your expertise to help train next-generation AI systems. Your work will shape how models learn, reason, and perform through high-quality, real-world input. </p><h3>Scope of Work</h3><ol>\n<li>Listen to multi-speaker conversational audio recordings, identifying and tagging key speaker and audio metadata such as dialect, accent, audio quality, background noise, age, and speaking style.</li>\n<li>Annotate and correct first-pass ASR (Automatic Speech Recognition) transcripts, ensuring precise application of Indian English spelling, usage, and conventions.</li>\n<li>Utilize your knowledge of Indian regional accents, shaped by the mother tongues and regional varieties across the country, including Hindi-influenced English, Tamil English, Telugu English, Malayalam English, Bengali English, Marathi English, Gujarati English, Punjabi English, and Kannada English, to accurately identify and categorize dialectal features.</li>\n<li>Apply your knowledge of Indian English vocabulary, idioms, slang, code-switching (such as Hinglish), and spelling to enhance the linguistic accuracy of project data.</li>\n</ol><h3>Preferred Qualifications</h3><ol>\n<li>Native or near-native proficiency in Indian English, with a keen understanding of regional dialects and cultural nuances.</li>\n<li>Background in linguistics, English teaching, language studies, or a related discipline.</li>\n<li>Prior experience in transcription, language annotation, or corpus development is highly valued.</li>\n<li>Strong written and verbal communication skills — clarity, accuracy, and attention to detail are essential.</li>\n<li>Ability to provide constructive feedback, explain linguistic decisions, and adapt to evolving project goals.</li>\n<li>Proficiency in using digital tools for language tasks, such as transcription software or annotation platforms.</li>\n<li>Passion for language innovation and an interest in contributing to advancements in AI-driven language technology.</li>\n</ol><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "English-Language-Specialist",
+            "Language-Expert",
+            "English-Language-AI-Specialist",
+            "Freelance-Language-Expert"
+        ],
+        "parentCategories": [],
+        "skills": [
+            "Linguistics",
+            "AI Training",
+            "Data Annotation"
+        ],
+        "applicationLink": "https://himalayas.app/companies/micro1/jobs/english-language-expert-india?utm_source=api",
+        "pubDate": 1794626395,
+        "expiryDate": 1799810395
+    },
+    {
+        "id": 13,
+        "title": "Frontend Developer Intern",
+        "companyName": "SixSense Pte Ltd",
+        "companyLogo": "https://cdn-images.himalayas.app/alec53sq3dymtzbbux464pbxp3yd",
+        "location": "Other",
+        "roleType": "Internship",
+        "workMode": "On-Site",
+        "type": "Intern",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<p>SixSense builds an AI platform for semiconductor fabs and OSATs. Process and quality engineers use it to inspect defect images, train and deploy ML models, and act on the results without writing code. The web control room is the part of the product they work in every day.</p><h3>What You'll Do</h3><ul>\n<li><p>Build and maintain frontend features using React, TypeScript, and MUI.</p></li>\n<li><p>Develop interactive image experiences using HTML Canvas, including zooming, panning, drawing, and selecting bounding boxes.</p></li>\n<li><p>Work with large datasets of images, annotations, and model results while keeping the UI fast and responsive.</p></li>\n<li><p>Explore Web Workers and other browser capabilities to move computationally intensive tasks off the main thread.</p></li>\n<li><p>Profile frontend performance and troubleshoot rendering, responsiveness, and memory-related issues.</p></li>\n<li><p>Write unit tests for components and application logic.</p></li>\n<li><p>Participate in code reviews, technical discussions, and frontend design decisions.</p></li>\n</ul><h3>What We're Looking For</h3><h3>Must Have</h3><ul>\n<li><p>Strong JavaScript fundamentals, including closures, the event loop, promises, and async/await.</p></li>\n<li><p>Hands-on experience with React, including hooks, state management, component design, and re-rendering.</p></li>\n<li><p>Good understanding of HTML, CSS, and browser rendering fundamentals.</p></li>\n<li><p>Strong problem-solving skills and familiarity with data structures and algorithms.</p></li>\n<li><p>At least one meaningful project that you've built and can explain in depth, including your technical decisions and challenges.</p></li>\n</ul><h3>Good to Have</h3><ul>\n<li><h3>Experience with TypeScript.</h3></li>\n<li><p>Familiarity with MUI or other component libraries, including theming and style customisation.</p></li>\n<li><p>Experience with HTML Canvas or SVG for drawing, visualisation, or interactive applications.</p></li>\n<li><p>Exposure to Web Workers, OffscreenCanvas, or other browser performance optimisation techniques.</p></li>\n<li><p>Experience writing tests using Jest and React Testing Library.</p></li>\n<li><p>Familiarity with AI coding tools such as Claude Code, Codex, or Cursor, along with the ability to review, understand, and validate AI-generated code.</p></li>\n</ul><h3>Internship Details</h3><ul>\n<li><h3>Duration: 5 months</h3></li>\n<li><h3>Work Mode: Remote</h3></li>\n<li><p>Availability: Full-time commitment on weekdays throughout the internship.</p></li>\n<li><p>Requirements: A reliable laptop and stable internet connection.</p></li>\n<li><p>Learning: Hands-on exposure to production engineering, code reviews, and mentorship from experienced frontend engineers.</p></li>\n</ul><h3>Why SixSense?</h3><ul>\n<li><p>Work on a real AI product used in the semiconductor industry.</p></li>\n<li><p>Build production features rather than isolated internship projects.</p></li>\n<li><p>Solve interesting frontend challenges involving image rendering, interactivity, and performance at scale.</p></li>\n<li><p>Learn engineering best practices through code reviews and mentorship.</p></li>\n<li><p>Gain experience working on a complex product at the intersection of AI and industrial technology.</p></li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Front-End-Developer",
+            "Frontend-Engineer",
+            "Web-Developer"
+        ],
+        "parentCategories": [
+            "Developer"
+        ],
+        "skills": [
+            "React",
+            "TypeScript",
+            "HTML Canvas"
+        ],
+        "applicationLink": "https://himalayas.app/companies/sixsense-pte-ltd/jobs/frontend-developer-intern?utm_source=api",
+        "pubDate": 1795106721,
+        "expiryDate": 1799678764
+    },
+    {
+        "id": 14,
+        "title": "AI Funnel Architect",
+        "companyName": "Together Light Inc",
+        "companyLogo": "",
+        "location": "Remote India",
+        "roleType": "Contract",
+        "workMode": "Remote",
+        "type": "Contractor",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<h4>\n<strong>Autonomous Systems Architect</strong><br><strong>Full Time - Contractor, Remote</strong><br><strong>Rate : Depends on experience and capability</strong>\n</h4><h5>Can you</h5><ol>\n<li><p>set up AI agents and workflows to profitably build, test, and run multiple funnels starting from Meta through to a CRM?</p></li>\n<li><p>Can you build a beginning-to-end marketing funnel using AI automated tests?</p></li>\n<li><p>Are you a master of tools like Zapier,, n8n, Relay, OpenClaw, or custom API integrations?</p></li>\n<li><p>Do you view AI not just as chat bots, but as workers you can program into a larger workflow?</p></li>\n<li><p>Can you design and manage the architecture for marketing 100 simultaneous offers effectively with few major mistakes?</p></li>\n<li><p>Are you data-obsessed, understanding that a system is only as good as the data the system can utilize?</p></li>\n<li><p>Do you have a strong background in math, having both theoretical prowess and mastery analyzing real data?</p></li>\n</ol><h5>If you answered \"YES\", we want you to work with us as we build the structural foundation for our next phase of growth and execute on the plan.</h5><h4>\n<br>About the Role:</h4><p>You will become the lead architect for growing our current lead generations systems for our 2026 objective. Specifically, we want to grow our offers from a handful, to at least 100 by the end of 2026.</p><p>We will need you as the guiding force in automating our marketing to pull this off. You'll work in collaboration with our Senior Marketing Generalists to focus their time on where it counts.</p><p>You'll also be part of our internal tech team, because ultimately the data and leads will be populated into our existing custom CRM.<br><br>Your primary objective is to build and maintain the marketing infrastructure that allows us to scale from five offers to over 100 by the end of the year.</p><p>You won't be just \"running ads\"—you will be building the machines and systems that help the marketing team run more ads, create better ads, test more ads, and iterate more marketing funnels, faster, more efficiently, and with less mistakes.</p><p>You will also have access to top-notch marketing resources via a high-end mastermind and coaching platform that we are part of.</p><h4><strong>Responsibilities:</strong></h4><ol>\n<li><p>Workflow Orchestration: Design and deploy complex automations that connect our custom CRM, ad platforms, funnel softwares, landing pages, payment processors, and other systems. Turn it into a well oiled, highly functioning revenue machine.</p></li>\n<li><p>AI Implementation: Integrate LLMs and AI agents into our daily operations to automate creative drafting, data analysis, and customer interactions.</p></li>\n<li><p>Systemic Optimization: Instead of manually A/B testing each step in a funnel, you will build systems that automatically initiates \"Challenger vs. Champion\" tests across all 100 offers, across all levels of the marketing funnel.</p></li>\n<li><p>Rapid Deployment: Build \"offer templates\" that allow a new product to go from concept to live-market testing with less than 10 total human hours required.</p></li>\n<li><p>Data Architecture: Ensure that LTV, ROAS, as well as our own custom metrics like lead value, are tracked accurately, providing real-time analytics for analysis.</p></li>\n<li><p><strong>AI leverage:</strong>Expert level understanding on how to use AI agents and systems to leverage time, tasks, and marketing duties.</p></li>\n</ol><h4><strong>Qualifications:</strong></h4><ol>\n<li><p>Proven Systems Experience: 1+ years experience building complex automations.</p></li>\n<li><p>Technical Proficiency: Expert level inMake.com/Zapier, Claude Code, Codex, AI Prompt Engineering, API integrations, Google Workspace/Apps Script - OR WHATEVER YOU'LL NEED TO GET THE JOB DONE RIGHT.</p></li>\n<li><p>Strategic Thinking: Ability to look at a 100-offer goal and identify the \"bottlenecks\" that require automation before they materialize.</p></li>\n<li><p>Attention to Detail: In an autonomous system, one broken link can ruin 100 funnels. You must be meticulous and detail oriented in your work.</p></li>\n<li><p>Adaptability: The AI landscape changes constantly. You must be a “constant learner” who researches, goes down rabbit holes, and learns about new AI apps, models, and automation systems to stay ahead of the curve and provide our marketers with the best automation solutions available.</p></li>\n</ol><p><strong>Interested? Apply now to join our marketing team of talented, mission driven operators in a brand new growth phase of an already high 7 figure business.</strong></p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "AI-Funnel-Architect",
+            "Marketing-Automation-Architect",
+            "Automation-Architect",
+            "System-Architect"
+        ],
+        "parentCategories": [
+            "Developer"
+        ],
+        "skills": [
+            "AI Automation",
+            "Zapier",
+            "Marketing Funnels"
+        ],
+        "applicationLink": "https://himalayas.app/companies/together-light-inc/jobs/ai-funnel-architect?utm_source=api",
+        "pubDate": 1795106785,
+        "expiryDate": 1799655304
+    },
+    {
+        "id": 15,
+        "title": "Client Services Analyst",
+        "companyName": "Crypto.com",
+        "companyLogo": "https://cdn-images.himalayas.app/25bth6gq2qzqptno6z9gzn7gyn8u",
+        "location": "Other",
+        "roleType": "Full-Time",
+        "workMode": "On-Site",
+        "type": "Full Time",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "annual",
+        "description": "<div>As a member of our client services team, you’ll provide top-tier support to a global client base across multiple asset classes. No finance background is required; we want people committed to excellent client service and eager to learn about financial markets and digital asset trading. This entry-level role suits candidates with strong interpersonal skills who thrive in a fast-paced, team-oriented trading environment. We value culture fit and offer a vibrant, fun, and supportive workplace that makes it enjoyable to do your best work.</div><h3>Responsibilities:</h3><ul><div>\n<li>Serve as the primary point of contact for client inquiries, including requests from Sales and Account Management; this role requires participation in rotational shifts, including weekends.</li>\n<li>Support clients with account and trading inquiries, consistently meeting service-level agreements and ensuring a seamless support experience.</li>\n<li>Collaborate with internal Support and Development teams to resolve client issues promptly and provide accurate information.</li>\n<li>Maintain and update knowledge articles, FAQs, user manuals and related documentation. Proactively monitor trading system health and escalate to internal technical teams as required.</li>\n<li>Coordinate with cross-functional colleagues to establish and sustain strong interdepartmental working relationships.</li>\n<li>Adapt to frequent procedural and technological changes, meeting deadlines while complying with evolving regulations and internal processes.</li>\n</div></ul><h3> Required Skills:</h3><ul><div>\n<li>Degree-level education with 1–4 years of experience in a client-facing role.</li>\n<li>Fluency in English, with excellent interpersonal and communication skills, both written and verbal, at all organizational levels.</li>\n<li>Strong attention to detail and organizational skills, with a track record of meeting deadlines and taking ownership of assigned responsibilities.</li>\n<li>Ability to manage multiple tasks with conflicting deadlines while maintaining a high degree of accuracy.</li>\n<li>A proactive approach to researching and resolving issues, using a logical and analytical mindset to identify problems and propose solutions.</li>\n<li>Experience contributing to process improvement and operational optimization, with a drive to identify opportunities for change.</li>\n<li>Ability to perform effectively under pressure and adapt rapidly to a dynamic work environment.</li>\n<li>A strong team ethos and collaborative mindset, with availability to work shifts, including non-standard hours and weekends.</li>\n</div></ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Client-Services-Analyst",
+            "Client-Support-Analyst",
+            "Customer-Service",
+            "Trader-Support-Specialist",
+            "Financial-Services-Support"
+        ],
+        "parentCategories": [
+            "Customer Service"
+        ],
+        "skills": [
+            "Client Support",
+            "Financial Markets",
+            "Communication"
+        ],
+        "applicationLink": "https://himalayas.app/companies/crypto-com/jobs/client-services-analyst?utm_source=api",
+        "pubDate": 1795106927,
+        "expiryDate": 1799595823
+    },
+    {
+        "id": 16,
+        "title": "Part-Time Data Entry Specialist",
+        "companyName": "APADCode",
+        "companyLogo": "https://cdn-images.himalayas.app/mytsse5gfiu5zze15k003g42pkj5",
+        "location": "Remote India",
+        "roleType": "Full-Time",
+        "workMode": "Remote",
+        "type": "Full Time",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "hourly",
+        "description": "<h3>About <a href=\"https://himalayas.app/companies/apadcode\">APADCode</a>\n</h3><p><a href=\"https://himalayas.app/companies/apadcode\">APADCode</a> is a technology and business solutions company providing software development, data management, and operational support services to businesses. We are looking for reliable, detail-oriented individuals to join our team as Part-Time Data Entry Specialists.</p><p>This is an excellent opportunity for individuals seeking flexible remote work. No technical background or previous professional experience is required. Basic computer literacy, good English communication skills, and a willingness to learn are all you need to get started.</p><h3>Key Responsibilities</h3><ul>\n<li><p>Enter, update, and maintain information in spreadsheets, databases, and internal systems.</p></li>\n<li><p>Review and verify data for accuracy and completeness.</p></li>\n<li><p>Organize digital documents, records, and files.</p></li>\n<li><p>Perform basic online research and information collection.</p></li>\n<li><p>Follow established procedures and complete assigned tasks within deadlines.</p></li>\n<li><p>Communicate with team members regarding task progress and updates.</p></li>\n<li><p>Maintain confidentiality and handle business information responsibly.</p></li>\n</ul><h3>Requirements</h3><ul>\n<li><p><strong>English Proficiency:</strong> Upper-intermediate (B2) level or higher, with good written and verbal communication skills.</p></li>\n<li><p><strong>Computer Skills:</strong> Basic proficiency in using computers, web browsers, email, and spreadsheets.</p></li>\n<li><p><strong>Internet Connection:</strong> Reliable, stable internet connection suitable for remote work.</p></li>\n<li><p><strong>Equipment:</strong> Access to a personal laptop or desktop computer.</p></li>\n<li><p><strong>Availability:</strong> Ability to commit 10–20 hours per week.</p></li>\n<li><p><strong>Attention to Detail:</strong> Ability to enter and review information accurately.</p></li>\n<li><p><strong>Time Management:</strong> Capable of working independently and meeting deadlines.</p></li>\n<li><p><strong>Reliability:</strong> Responsible, organized, and responsive to communication.</p></li>\n</ul><p><strong>No programming skills, technical qualifications, or previous data entry experience are required.</strong></p><h3>What We Offer</h3><ul>\n<li><p>Competitive hourly compensation of $10–$25 USD, depending on qualifications and responsibilities.</p></li>\n<li><h3>Flexible part-time schedule.</h3></li>\n<li><h3>Fully remote working environment.</h3></li>\n<li><p>Training and guidance for assigned tasks.</p></li>\n<li><p>Opportunities to gain experience in business operations and data management.</p></li>\n<li><p>Potential for ongoing collaboration for various interesting projects based on performance and business needs.</p></li>\n</ul><h3>How to Apply</h3><p>Interested candidates should submit a brief introduction, an updated resume (if available), their English proficiency level, and their weekly availability.</p><p>We welcome applications from students, recent graduates, career changers, and individuals looking for additional part-time income.</p><h3>\n<a href=\"https://himalayas.app/companies/apadcode\">APADCode</a>, Inc — Equal Opportunity Employer</h3><p>We evaluate applicants based on their qualifications, communication skills, reliability, and ability to perform the responsibilities of the role.</p><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Part-Time-Data-Entry",
+            "Data-Entry-Specialist",
+            "Data-Entry-Associate",
+            "Data-Entry-Clerk",
+            "Entry-Level-Data-Entry",
+            "Data-Entry-Jobs",
+            "Data-Entry-Assistant",
+            "Data-Entry-Operator"
+        ],
+        "parentCategories": [
+            "Operations"
+        ],
+        "skills": [
+            "Data Entry",
+            "Database Management",
+            "Research"
+        ],
+        "applicationLink": "https://himalayas.app/companies/apadcode/jobs/part-time-data-entry-specialist?utm_source=api",
+        "pubDate": 1794272919,
+        "expiryDate": 1799456918
+    },
+    {
+        "id": 17,
+        "title": "Interview Coordination & No-Show Specialist",
+        "companyName": "Weekday",
+        "companyLogo": "",
+        "location": "Remote India",
+        "roleType": "Full-Time",
+        "workMode": "Remote",
+        "type": "Full Time",
+        "minSalary": "Not Disclosed",
+        "maxSalary": "Not Disclosed",
+        "salaryPeriod": "monthly",
+        "description": "<p><strong>This is an internal role not for our client role<br><br>Experience:</strong> 0–2 years<br><strong>Shifts:</strong> 8 AM–5 PM / 12 AM–9 AM<br><strong>Location:</strong> Remote<br><strong>Compensation :</strong> 10k - 20k (This includes fixed and variable component)</p><p><strong>Are you the person who never lets an interview slip through the cracks?</strong></p><p>We’re looking for a highly reliable coordinator to ensure every scheduled interview happens smoothly. You’ll be the go-to person between clients and candidates - confirming interviews, preventing no-shows, and keeping everything on track.</p><h3><strong>What You’ll Do</strong></h3><ul>\n<li><p>Confirm interviews with candidates and clients before they happen.</p></li>\n<li><p>Send invites, reminders, and joining links.</p></li>\n<li><p>Coordinate timings, reschedules, and last-minute changes.</p></li>\n<li><p>Follow up quickly on delayed or missed interviews.</p></li>\n<li><p>Maintain simple interview trackers and share daily updates.</p></li>\n</ul><h3><strong>Who We Want</strong></h3><ul>\n<li><p>Excellent English communication - confident on calls, email, and chat.</p></li>\n<li><p>A proactive follow-up mindset: you don’t wait to be reminded.</p></li>\n<li><p>Strong attention to detail with timings, names, links, and client instructions.</p></li>\n<li><h3>Basic ATS, tools  and calendar skills.</h3></li>\n<li><p>Recruitment, BPO, customer support, or client coordination experience is a plus.</p></li>\n</ul><h3><strong>You’ll Fit Right In If You</strong></h3><ul>\n<li><p>Take ownership and follow through without supervision.</p></li>\n<li><p>Stay calm and professional when plans change.</p></li>\n<li><p>Enjoy organizing, tracking, and closing the loop.</p></li>\n<li><p>Understand that one missed interview affects both a client and a candidate.</p></li>\n</ul><h3><strong>Why Join</strong></h3><ul>\n<li><p>Directly improve client satisfaction and candidate experience.</p></li>\n<li><p>Build strong skills in recruitment operations and client coordination.</p></li>\n<li><p>Work in a structured team where reliability is recognized.</p></li>\n</ul><p>Originally posted on <a href=\"https://himalayas.app\">Himalayas</a></p>",
+        "categories": [
+            "Interview-Coordinator",
+            "Recruitment-Coordinator",
+            "Scheduling-Coordinator"
+        ],
+        "parentCategories": [],
+        "skills": [
+            "Coordination",
+            "Communication",
+            "Scheduling"
+        ],
+        "applicationLink": "https://himalayas.app/companies/weekday-com/jobs/interview-coordination-no-show-specialist?utm_source=api",
+        "pubDate": 1795106950,
+        "expiryDate": 1799431495
+    }
+]

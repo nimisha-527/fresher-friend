@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
+import { createPinia } from 'pinia'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import Tabs from '../components/Tabs.vue'
 import { routePaths } from '../router/paths'
+import { useSavedRolesStore } from '../stores/savedRoles'
 
 const testRoutes = [
   ...Object.values(routePaths),
@@ -23,7 +25,7 @@ describe('Tabs', () => {
     await router.push(routePaths.home)
     await router.isReady()
     const wrapper = mount(Tabs, {
-      global: { plugins: [router] },
+      global: { plugins: [router, createPinia()] },
     })
 
     expect(wrapper.text()).toContain('fresherFriend')
@@ -41,7 +43,7 @@ describe('Tabs', () => {
     await router.push(routePaths.home)
     await router.isReady()
     const wrapper = mount(Tabs, {
-      global: { plugins: [router] },
+      global: { plugins: [router, createPinia()] },
     })
 
     expect(wrapper.get(`a[href="${routePaths.home}"]`).attributes('href')).toBe(routePaths.home)
@@ -55,7 +57,7 @@ describe('Tabs', () => {
     await router.push(routePaths.home)
     await router.isReady()
     const wrapper = mount(Tabs, {
-      global: { plugins: [router] },
+      global: { plugins: [router, createPinia()] },
     })
     const savedRolesLink = wrapper.get(`a[href="${routePaths.savedJobs}"]`)
 
@@ -69,5 +71,20 @@ describe('Tabs', () => {
     expect(savedRolesLink.attributes('aria-current')).toBe('page')
     expect(savedRolesLink.get('span:last-child').classes()).toContain('bg-[#111111]')
     expect(savedRolesLink.get('span:last-child').classes()).toContain('text-white')
+  })
+
+  it('displays the current saved roles count', async () => {
+    const router = createTestRouter()
+    const pinia = createPinia()
+    useSavedRolesStore(pinia).toggleSavedRole(1)
+    await router.push(routePaths.home)
+    await router.isReady()
+    const wrapper = mount(Tabs, {
+      global: { plugins: [router, pinia] },
+    })
+
+    expect(wrapper.get(`a[href="${routePaths.savedJobs}"]`).get('span:last-child').text()).toBe(
+      '1',
+    )
   })
 })

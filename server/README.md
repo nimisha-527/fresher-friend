@@ -20,3 +20,5 @@ This folder contains the backend API for the project. It is built with Express, 
  - Updated: src/controllers/jobListing.ts - Await asynchronous Gemini job tagging before mapping results <Last Updated: 18/11/2026>
  - Updated: src/controllers/jobListing.ts - Skip listings without complete Gemini classifications rather than dereferencing missing tags <Last Updated: 18/11/2026>
  - Updated: src/controllers/jobListing.ts - Return Himalayas locationRestrictions as the response location array <Last Updated: 18/11/2026>
+ - Updated: ../server/genai/tagsJobsWithGemini.ts - Add AI role-type classification to the response schema and prompt <Last Updated: 20/11/2026>
+- Updated: ../server/src/controllers/jobListing.ts - Send role classification inputs to Gemini and use AI role type and upstream timestamps in listings <Last Updated: 20/11/2026>

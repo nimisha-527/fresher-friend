@@ -128,6 +128,9 @@ export const getJobListings = async (req: Request, res: Response) => {
           categories: job.categories || [],
           parentCategories: job.parentCategories || [],
           skills: Array.isArray(ai.skills) ? ai.skills : [],
+          applicationLink: job.applicationLink,
+          pubDate: job.pubDate,
+          expiryDate: job.expiryDate,
         }];
       });
     res.status(200).json(formattedJobs);

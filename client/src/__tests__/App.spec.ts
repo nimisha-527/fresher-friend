@@ -6,6 +6,8 @@ import App from '../App.vue'
 
 describe('App', () => {
   it('shows the info modal while initial content is loading', () => {
+    vi.stubEnv('VITE_BACKEND_URL', 'http://api.test/fresherFriend')
+    vi.stubEnv('VITE_USE_MOCK', 'false')
     vi.spyOn(axios, 'get').mockReturnValue(new Promise<AxiosResponse>(() => {}))
 
     const wrapper = mount(App, {
@@ -18,5 +20,11 @@ describe('App', () => {
       'Thank you for your patience! We are currently fetching the initial content from the API. This may take a few moments, so please bear with us. Your experience is important to us, and we appreciate your understanding as we ensure everything is set up correctly.',
     )
     expect(wrapper.find('button').exists()).toBe(false)
+    expect(axios.get).toHaveBeenCalledWith(
+      'http://api.test/fresherFriend/initial-content',
+    )
+    expect(axios.get).toHaveBeenCalledWith(
+      'http://api.test/fresherFriend/jobs-listing?country=IN&exclude_worldwide=true&sort=recent',
+    )
   })
 })
