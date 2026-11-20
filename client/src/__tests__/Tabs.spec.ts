@@ -3,6 +3,7 @@ import { flushPromises, mount } from '@vue/test-utils'
 import { createPinia } from 'pinia'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import Tabs from '../components/Tabs.vue'
+import allRolesData from '../mocks/allRolesData.json'
 import { routePaths } from '../router/paths'
 import { useSavedRolesStore } from '../stores/savedRoles'
 
@@ -76,7 +77,11 @@ describe('Tabs', () => {
   it('displays the current saved roles count', async () => {
     const router = createTestRouter()
     const pinia = createPinia()
-    useSavedRolesStore(pinia).toggleSavedRole(1)
+    const firstJob = allRolesData[0]
+    if (!firstJob) {
+      throw new Error('Mock job listings must contain at least one listing.')
+    }
+    useSavedRolesStore(pinia).toggleSavedRole(firstJob)
     await router.push(routePaths.home)
     await router.isReady()
     const wrapper = mount(Tabs, {

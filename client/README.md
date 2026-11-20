@@ -78,3 +78,5 @@ This folder contains the frontend for the project. It is built with Vue, TypeScr
 - Added: `src/composables/useUsdInrRate.ts` - Load and validate the live USD-to-INR rate when salary sorting is selected, and surface retryable errors. <Last Updated: 20/11/2026>
 - Updated: `src/mocks/getStaticContent.json` - Describe the searchable locations, work modes, categories, and salary options. <Last Updated: 20/11/2026>
 - Updated: `src/views/Home.vue` and `src/components/FilterOpportunities.vue` - Add API-backed role-type checkbox filtering and include role types in search. <Last Updated: 20/11/2026>
+- Added: `src/views/SavedRoles.vue` - Render saved job cards with the shared JobCard component and an empty-state panel with an Explore Roles link back to Home. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Show a Clear All Filters button when search, sort, or filter controls are active; reset them and hide the button after clearing. <Last Updated: 20/11/2026>
