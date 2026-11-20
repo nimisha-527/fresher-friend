@@ -1,41 +1,7 @@
 {
-  "tabs": [
-    {
-      "id": 1,
-      "label": "All Roles"
-    },
-    {
-      "id": 2,
-      "label": "Internships"
-    },
-    {
-      "id": 3,
-      "label": "Fresher Jobs"
-    },
-    {
-      "id": 4,
-      "label": "My Applications"
-    }
-  ],
   "allRoles": {
     "heading": "Fresher Jobs & Internships Across India",
     "description": "Verified entry-level roles and paid internships from Indian product startups and engineering teams—with upfront INR compensation and one-step applications."
-  },
-  "internships": {
-    "heading": "Internships Across India",
-    "description": "Paid internships from Indian product startups and engineering teams—with upfront INR compensation and one-step applications."
-  },
-  "fresherJobs": {
-    "heading": "Fresher & Entry Level Jobs",
-    "description": "0-1 year entry-level engineering, product, design, and data openings for 2025 & 2026 graduates."
-  },
-  "myApplications": {
-    "heading": "My Applications",
-    "description": "Track the status of your applications and view details of the roles you've applied to.",
-    "submittedLabel": "{{applications}} Submitted",
-    "noApplicationsLabel": "No applications submitted yet",
-    "noApplicationsDescription": "You can apply to roles by clicking the 'Apply Now' button on the role card. Your submitted applications will appear here for easy tracking.",
-    "noApplicationsButtonLabel": "Explore Roles"
   },
   "searchPlaceholder": "Search locations, work modes, role types, categories, or salary options",
   "fresherFriendLabel": "fresherFriend",

@@ -26,4 +26,5 @@ This folder contains the backend API for the project. It is built with Express, 
  - Added: src/controllers/jobCheckAI.ts - Fetch 15 Himalayas pages, deduplicate jobs by GUID/title/company before AI checks, persist the snapshot after successful processing, return token usage, and schedule refreshes 24 hours after successful generation <Last Updated: 20/11/2026>
  - Added: src/controllers/filterOpportunities.ts - Return distinct filter options derived from all cached classified jobs through GET /fresherFriend/filter-opportunities; salary options use minSalary, fall back to maxSalary, or use Not Disclosed, preserving the displayed currency or LPA unit <Last Updated: 20/11/2026>
  - Updated: src/controllers/filterOpportunities.ts - Include distinct roleType values from jobs classified by /job-check-api in filter opportunities <Last Updated: 20/11/2026>
+ - Updated: src/api-data/initialContent.json - Remove the tabs array and unused All Roles navigation labels from the initial-content response <Last Updated: 20/11/2026>
  - Updated: ../client/src/views/Home.vue - Request each 20-job page from /jobs-listing without repeating AI processing <Last Updated: 20/11/2026>
