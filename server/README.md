@@ -22,3 +22,6 @@ This folder contains the backend API for the project. It is built with Express, 
  - Updated: src/controllers/jobListing.ts - Return Himalayas locationRestrictions as the response location array <Last Updated: 18/11/2026>
  - Updated: ../server/genai/tagsJobsWithGemini.ts - Add AI role-type classification to the response schema and prompt <Last Updated: 20/11/2026>
 - Updated: ../server/src/controllers/jobListing.ts - Send role classification inputs to Gemini and use AI role type and upstream timestamps in listings <Last Updated: 20/11/2026>
+ - Updated: src/controllers/jobListing.ts - Return 20 MongoDB-cached listings per /jobs-listing?page=N response with pagination metadata and trigger refresh through the AI-check workflow <Last Updated: 20/11/2026>
+ - Added: src/controllers/jobCheckAI.ts - Fetch 15 Himalayas pages with required filters, classify their 300 jobs, persist the snapshot after successful processing, and return aggregated input/output token usage from /job-check-ai <Last Updated: 20/11/2026>
+ - Updated: ../client/src/views/Home.vue - Request each 20-job page from /jobs-listing without repeating AI processing <Last Updated: 20/11/2026>

@@ -24,7 +24,7 @@ describe('App', () => {
       'http://api.test/fresherFriend/initial-content',
     )
     expect(axios.get).toHaveBeenCalledWith(
-      'http://api.test/fresherFriend/jobs-listing?country=IN&exclude_worldwide=true&sort=recent',
+      'http://api.test/fresherFriend/jobs-listing?page=1',
     )
   })
 })

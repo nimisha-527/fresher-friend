@@ -2,15 +2,14 @@ import axios from 'axios'
 import { storeToRefs } from 'pinia'
 import allRolesData from '../mocks/allRolesData.json'
 import { useJobListingsStore } from '../stores/jobListings'
-import type { JobListing } from '../types/jobListing'
+import type { JobListingsPage } from '../types/jobListing'
 
 export const JOBS_PER_PAGE = 20
-export const DEMO_JOB_COUNT = 300
-export const DEMO_PAGE_COUNT = Math.ceil(DEMO_JOB_COUNT / JOBS_PER_PAGE)
 
 export const useJobListingApi = () => {
   const jobListingsStore = useJobListingsStore()
-  const { jobListings, loading, error } = storeToRefs(jobListingsStore)
+  const { jobListings, totalPages, loading, error } =
+    storeToRefs(jobListingsStore)
   const isMockMode = import.meta.env.VITE_USE_MOCK === 'true'
 
   const getJobListings = async (page = 1) => {
@@ -35,30 +34,25 @@ export const useJobListingApi = () => {
         )
       }
 
-      const params: {
-        country: string
-        exclude_worldwide: boolean
-        sort: string
-        page?: number
-      } = {
-        country: 'IN',
-        exclude_worldwide: true,
-        sort: 'recent',
-      }
-      if (page > 1) {
-        params.page = page
-      }
-
-      const pageQuery =
-        params.page === undefined ? '' : `&page=${params.page}`
-      const response = await axios.get<JobListing[]>(
-        `${serverURL}/jobs-listing?country=IN&exclude_worldwide=true&sort=recent${pageQuery}`,
+      const response = await axios.get<JobListingsPage>(
+        `${serverURL}/jobs-listing?page=${page}`,
       )
-      if (!Array.isArray(response.data)) {
+      const data = response.data
+      if (
+        !data ||
+        typeof data !== 'object' ||
+        !Array.isArray(data.jobs) ||
+        typeof data.totalPages !== 'number' ||
+        !Number.isSafeInteger(data.totalPages) ||
+        data.totalPages < 0
+      ) {
         throw new Error('Jobs listing API returned an invalid response.')
       }
 
-      jobListingsStore.setJobListings(response.data)
+      jobListingsStore.setJobListings(
+        data.jobs,
+        data.totalPages,
+      )
     } catch (requestError) {
       const message =
         requestError instanceof Error ? requestError.message : 'Unknown error'
@@ -69,5 +63,12 @@ export const useJobListingApi = () => {
     }
   }
 
-  return { getJobListings, jobListings, loading, error, isMockMode }
+  return {
+    getJobListings,
+    jobListings,
+    totalPages,
+    loading,
+    error,
+    isMockMode,
+  }
 }

@@ -18,3 +18,11 @@ export interface JobListing {
   pubDate: number
   expiryDate: number
 }
+
+export interface JobListingsPage {
+  jobs: JobListing[]
+  page: number
+  pageSize: number
+  totalJobs: number
+  totalPages: number
+}

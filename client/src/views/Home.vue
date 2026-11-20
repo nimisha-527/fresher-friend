@@ -6,7 +6,6 @@ import SearchInput from '../components/SearchInput.vue'
 import SortSelector from '../components/SortSelector.vue'
 import staticContent from '../mocks/getStaticContent.json'
 import {
-  DEMO_PAGE_COUNT,
   JOBS_PER_PAGE,
   useJobListingApi,
 } from '../composables/useJobListingApi'
@@ -28,6 +27,7 @@ const currentPage = ref(1)
 const {
   getJobListings,
   jobListings,
+  totalPages: apiTotalPages,
   loading: jobsLoading,
   error: jobsError,
   isMockMode,
@@ -35,13 +35,17 @@ const {
 const totalPages = computed(() =>
   isMockMode
     ? Math.max(1, Math.ceil(jobListings.value.length / JOBS_PER_PAGE))
-    : DEMO_PAGE_COUNT,
+    : Math.max(1, apiTotalPages.value),
 )
 const pageNumbers = computed(() =>
   Array.from({ length: totalPages.value }, (_, index) => index + 1),
 )
 const jobs = computed(() => {
-  const start = isMockMode ? (currentPage.value - 1) * JOBS_PER_PAGE : 0
+  if (!isMockMode) {
+    return jobListings.value
+  }
+
+  const start = (currentPage.value - 1) * JOBS_PER_PAGE
   return jobListings.value.slice(start, start + JOBS_PER_PAGE)
 })
 const savedRoles = useSavedRolesStore()
@@ -51,8 +55,14 @@ async function goToPage(page: number) {
     return
   }
 
+  if (!isMockMode) {
+    await getJobListings(page)
+    if (jobsError.value) {
+      return
+    }
+  }
+
   currentPage.value = page
-  await getJobListings(page)
 }
 </script>
 
