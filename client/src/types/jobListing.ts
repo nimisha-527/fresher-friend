@@ -26,3 +26,11 @@ export interface JobListingsPage {
   totalJobs: number
   totalPages: number
 }
+
+export interface JobListingFilters {
+  workMode: string[]
+  location: string[]
+  roleType: string[]
+  parentCategories: string[]
+  salaryRange: string[]
+}

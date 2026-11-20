@@ -5,7 +5,7 @@ defineOptions({
   name: 'SortSelector',
 })
 
-const selectedSortOption = defineModel<number>({ required: true })
+const selectedSortOption = defineModel<number | ''>({ required: true })
 </script>
 
 <template>

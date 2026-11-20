@@ -59,3 +59,22 @@ This folder contains the frontend for the project. It is built with Vue, TypeScr
 - Updated: `src/views/Home.vue` - Render the API response as the selected page instead of applying the global page offset twice. <Last Updated: 20/11/2026>
 - Updated: `src/__tests__/Home.spec.ts` - Verify page 5 results render after the paged API response loads. <Last Updated: 20/11/2026>
 - Updated: `src/composables/useJobListingApi.ts` - Avoid sending an undefined page query for the default page. <Last Updated: 20/11/2026>
+- Added: `src/components/FilterOpportunities.vue` - Render checkbox groups for work mode, location, parent categories, and salary range below search and sort. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Filter the currently loaded job page using selected checkboxes; selections are ORed within a group and combined with AND across groups. Salary options match `minSalary`, fall back to `maxSalary`, and use `Not Disclosed` when neither is available; salary values retain their displayed currency or LPA unit. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Show the filter-specific no-results message when no loaded jobs match the selected filters. <Last Updated: 20/11/2026>
+- Updated: `src/types/jobListing.ts` - Define the selected job filter groups. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/filterOpportunities.json` - Provide the checkbox options rendered by the filter panel. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add filter labels and the filter-specific no-results content. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/Home.spec.ts` - Test filter controls, combined matching, salary ranges, and the no-results state. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Place the filter sidebar beside job listings on wide screens and stack it above listings on smaller screens. <Last Updated: 20/11/2026>
+- Added: `src/stores/filterOpportunities.ts` and `src/types/filterOpportunities.ts` - Store and type filter options for use across components. <Last Updated: 20/11/2026>
+- Added: `src/composables/useFilterOpportunitiesApi.ts` - Load filter options from the API or local mock data, and expose request errors in the store. <Last Updated: 20/11/2026>
+- Updated: `src/App.vue` - Request filter options after the initial job-listings request completes. <Last Updated: 20/11/2026>
+- Updated: `src/components/FilterOpportunities.vue` - Render options from the shared filter-opportunities store. <Last Updated: 20/11/2026>
+- Added: `src/__tests__/useFilterOpportunitiesApi.spec.ts` - Test mock/API loading and filter request errors. <Last Updated: 20/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Verify filter options load after job listings. <Last Updated: 20/11/2026>
+- Updated: `src/components/SearchInput.vue` and `src/views/Home.vue` - Sanitize search input and match case-insensitively against all API filter options; ignore punctuation such as category hyphens and include a job when any query word matches. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` - Sort jobs by most recent or salary; convert USD amounts to LPA with the live USD-to-INR rate, keep existing LPA values unchanged, and leave undisclosed/unrecognized salaries last. <Last Updated: 20/11/2026>
+- Added: `src/composables/useUsdInrRate.ts` - Load and validate the live USD-to-INR rate when salary sorting is selected, and surface retryable errors. <Last Updated: 20/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Describe the searchable locations, work modes, categories, and salary options. <Last Updated: 20/11/2026>
+- Updated: `src/views/Home.vue` and `src/components/FilterOpportunities.vue` - Add API-backed role-type checkbox filtering and include role types in search. <Last Updated: 20/11/2026>
