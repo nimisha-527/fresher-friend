@@ -1,10 +1,13 @@
 import axios from 'axios'
 import { storeToRefs } from 'pinia'
 import allRolesData from '../mocks/allRolesData.json'
+import staticContent from '../mocks/getStaticContent.json'
 import { useJobListingsStore } from '../stores/jobListings'
 import type { JobListingsPage } from '../types/jobListing'
+import { getApiErrorMessage } from '../utils/apiError'
 
 export const JOBS_PER_PAGE = 20
+const JOBS_SLOW_REQUEST_MS = 10_000
 
 export const useJobListingApi = () => {
   const jobListingsStore = useJobListingsStore()
@@ -20,6 +23,7 @@ export const useJobListingApi = () => {
 
     jobListingsStore.loading = true
     jobListingsStore.error = null
+    let slowRequestTimer: ReturnType<typeof setTimeout> | undefined
 
     try {
       if (isMockMode) {
@@ -33,6 +37,10 @@ export const useJobListingApi = () => {
           'VITE_BACKEND_URL is required when mock job data is disabled.',
         )
       }
+
+      slowRequestTimer = setTimeout(() => {
+        jobListingsStore.setError(staticContent.error.timeoutMessage)
+      }, JOBS_SLOW_REQUEST_MS)
 
       const response = await axios.get<JobListingsPage>(
         `${serverURL}/jobs-listing?page=${page}`,
@@ -54,11 +62,12 @@ export const useJobListingApi = () => {
         data.totalPages,
       )
     } catch (requestError) {
-      const message =
-        requestError instanceof Error ? requestError.message : 'Unknown error'
       console.error('Failed to fetch job listings:', requestError)
-      jobListingsStore.setError(message)
+      jobListingsStore.setError(getApiErrorMessage(requestError))
     } finally {
+      if (slowRequestTimer) {
+        clearTimeout(slowRequestTimer)
+      }
       jobListingsStore.loading = false
     }
   }

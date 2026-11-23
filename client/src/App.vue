@@ -1,21 +1,69 @@
 <script setup lang="ts">
-import { onBeforeMount } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 import { RouterView } from 'vue-router'
 import InfoModal from './components/modals/Info.vue'
+import ErrorModal from './components/modals/Error.vue'
 import { useFilterOpportunitiesApi } from './composables/useFilterOpportunitiesApi'
 import { useInitialContent } from './composables/useInitialContent.ts'
 import { useJobListingApi } from './composables/useJobListingApi'
+import staticContent from './mocks/getStaticContent.json'
 
 const { getInitialContent, loading, apiError } = useInitialContent()
-const { getJobListings } = useJobListingApi()
-const { getFilterOpportunities } = useFilterOpportunitiesApi()
+const {
+  getJobListings,
+  error: jobListingError,
+  loading: jobListingsLoading,
+} = useJobListingApi()
+const {
+  getFilterOpportunities,
+  error: filterOpportunitiesError,
+  loading: filterOpportunitiesLoading,
+} = useFilterOpportunitiesApi()
+
+const apiFailure = computed(
+  () =>
+    apiError.value ??
+    (jobListingError.value !== staticContent.error.timeoutMessage
+      ? jobListingError.value
+      : null) ??
+    (filterOpportunitiesError.value !== staticContent.error.timeoutMessage
+      ? filterOpportunitiesError.value
+      : null),
+)
+const showSlowRequestNotice = computed(
+  () =>
+    !apiFailure.value &&
+    ((jobListingError.value === staticContent.error.timeoutMessage &&
+      jobListingsLoading.value) ||
+      (filterOpportunitiesError.value === staticContent.error.timeoutMessage &&
+        filterOpportunitiesLoading.value)),
+)
+const displayedError = computed(
+  () =>
+    apiFailure.value ??
+    (showSlowRequestNotice.value
+      ? `${staticContent.error.timeoutMessage} ${staticContent.error.timeoutDescription}`
+      : null),
+)
+const displayedTitle = computed(() =>
+  showSlowRequestNotice.value ? staticContent.error.timeoutTitle : undefined,
+)
+
+const retryPage = () => window.location.reload()
+const clearErrors = () => {
+  apiError.value = null
+  jobListingError.value = null
+  filterOpportunitiesError.value = null
+}
 
 onBeforeMount(async () => {
   await Promise.all([
     getInitialContent(),
     (async () => {
       await getJobListings()
-      await getFilterOpportunities()
+      if (!jobListingError.value) {
+        await getFilterOpportunities()
+      }
     })(),
   ])
 })
@@ -24,7 +72,14 @@ onBeforeMount(async () => {
 <template>
   <main id="root">
     <InfoModal v-if="loading" />
-    <p v-else-if="apiError">{{ apiError }}</p>
+    <ErrorModal
+      v-else-if="displayedError"
+      :title="displayedTitle"
+      :message="displayedError"
+      :show-retry="!showSlowRequestNotice"
+      @close="clearErrors"
+      @retry="retryPage"
+    />
     <div v-else class="flex flex-col justify-center gap-4">
       <!-- <h1 class="text-3xl font-bold underline">{{ data?.title }}</h1>
       <p>{{ data?.description }}</p>

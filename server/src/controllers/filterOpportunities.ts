@@ -42,7 +42,8 @@ export async function getFilterOpportunities(_req: Request, res: Response) {
   } catch (error) {
     console.error("Failed to fetch job filter options:", error);
     res.status(502).json({
-      error: "Unable to fetch job filter options.",
+      error: error instanceof Error ? error.message : "Unable to fetch job filter options.",
+      status: error instanceof Error && "status" in error ? (error as any).status : undefined,
     });
   }
 }

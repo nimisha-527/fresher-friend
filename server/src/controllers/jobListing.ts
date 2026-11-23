@@ -67,7 +67,8 @@ export async function getJobListings(req: Request, res: Response) {
   } catch (error) {
     console.error("Failed to fetch job listings:", error);
     res.status(502).json({
-      error: "Unable to fetch and classify job listings.",
+      error: error instanceof Error ? error.message : "Unable to fetch job listings.",
+      status: error instanceof Error && "status" in error ? (error as any).status : undefined,
     });
   }
 }

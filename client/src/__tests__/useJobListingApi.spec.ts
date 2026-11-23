@@ -15,6 +15,7 @@ describe('useJobListingApi', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
     vi.resetAllMocks()
+    vi.useRealTimers()
     vi.unstubAllEnvs()
     vi.stubEnv('VITE_BACKEND_URL', 'http://api.test/fresherFriend')
   })
@@ -79,6 +80,42 @@ describe('useJobListingApi', () => {
     expect(axios.get).toHaveBeenCalledExactlyOnceWith(
       'http://api.test/fresherFriend/jobs-listing?page=2',
     )
+  })
+
+  it('shows the AI capacity message after 10 seconds without cancelling the jobs request', async () => {
+    vi.stubEnv('VITE_USE_MOCK', 'false')
+    vi.useFakeTimers()
+    let resolveRequest!: (response: AxiosResponse<JobListingsPage>) => void
+    vi.mocked(axios.get).mockReturnValue(
+      new Promise<AxiosResponse<JobListingsPage>>((resolve) => {
+        resolveRequest = resolve
+      }),
+    )
+    const { getJobListings, error } = useJobListingApi()
+    const request = getJobListings()
+
+    await vi.advanceTimersByTimeAsync(10_000)
+
+    expect(error.value).toBe(
+      'The free AI model is currently experiencing high demand.',
+    )
+
+    resolveRequest({
+      data: {
+        jobs: allRolesData,
+        page: 1,
+        pageSize: 20,
+        totalJobs: 300,
+        totalPages: 15,
+      },
+      status: 200,
+      statusText: 'OK',
+      headers: {},
+      config: { headers: {} as AxiosResponse<JobListingsPage>['config']['headers'] },
+    })
+    await request
+    expect(error.value).toBeNull()
+    vi.useRealTimers()
   })
 
   it('exposes API errors to the page state', async () => {

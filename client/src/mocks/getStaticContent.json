@@ -101,6 +101,10 @@
   "error": {
     "title": "Oops! Something went wrong.",
     "description": "We encountered an unexpected error while trying to load the content. Please try refreshing the page or come back later.",
+    "timeoutTitle": "Request is taking longer than expected",
+    "timeoutMessage": "The free AI model is currently experiencing high demand.",
+    "timeoutDescription": "No need to worry—we're continuing to process your request on the backend.",
+    "rateLimitMessage": "Rate limit exceeded. Please try again later.",
     "retryButtonLabel": "Retry"
   },
   "footer": {

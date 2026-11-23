@@ -288,6 +288,7 @@ async function goToPage(page: number) {
 </script>
 
 <template>
+  {{jobsError}}
   <section class="w-full bg-[#FAFAFA] px-4 py-10 text-left text-[#111111] sm:px-6 sm:py-14">
     <div class="mx-auto max-w-7xl">
       <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -344,6 +345,7 @@ async function goToPage(page: number) {
             {{ staticContent.loading.title }}
             {{ staticContent.loading.description }}
           </p>
+          
           <div
             v-else-if="jobsError"
             class="mt-8 rounded-xl border border-[#E5E7EB] bg-white p-6 text-[#52525B]"

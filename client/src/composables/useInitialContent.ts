@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { storeToRefs } from 'pinia'
 import { useApiHandling } from '../stores/apiHandling'
+import { getApiErrorMessage } from '../utils/apiError'
 
 export const useInitialContent = () => {
   const apiStore = useApiHandling()
@@ -16,7 +17,7 @@ export const useInitialContent = () => {
       apiSuccessFn(response.data)
     } catch (error) {
       console.error('Failed to fetch initial content:', error)
-      apiErrorFn(error instanceof Error ? error.message : 'Unknown error')
+      apiErrorFn(getApiErrorMessage(error))
     }
   }
 

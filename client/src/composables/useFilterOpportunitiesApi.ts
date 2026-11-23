@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { storeToRefs } from 'pinia'
 import filterOpportunitiesMock from '../mocks/filterOpportunities.json'
+import staticContent from '../mocks/getStaticContent.json'
 import { useFilterOpportunitiesStore } from '../stores/filterOpportunities'
 import type { FilterOpportunities } from '../types/filterOpportunities'
+import { getApiErrorMessage } from '../utils/apiError'
+
+const FILTER_OPPORTUNITIES_SLOW_REQUEST_MS = 10_000
 
 function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === 'string')
@@ -35,6 +39,7 @@ export const useFilterOpportunitiesApi = () => {
   const getFilterOpportunities = async () => {
     filterStore.loading = true
     filterStore.error = null
+    let slowRequestTimer: ReturnType<typeof setTimeout> | undefined
 
     try {
       if (isMockMode) {
@@ -49,6 +54,10 @@ export const useFilterOpportunitiesApi = () => {
         )
       }
 
+      slowRequestTimer = setTimeout(() => {
+        filterStore.setError(staticContent.error.timeoutMessage)
+      }, FILTER_OPPORTUNITIES_SLOW_REQUEST_MS)
+
       const response = await axios.get<unknown>(
         `${serverURL}/filter-opportunities`,
       )
@@ -60,11 +69,12 @@ export const useFilterOpportunitiesApi = () => {
 
       filterStore.setFilterOpportunities(response.data)
     } catch (requestError) {
-      const message =
-        requestError instanceof Error ? requestError.message : 'Unknown error'
       console.error('Failed to fetch filter opportunities:', requestError)
-      filterStore.setError(message)
+      filterStore.setError(getApiErrorMessage(requestError))
     } finally {
+      if (slowRequestTimer) {
+        clearTimeout(slowRequestTimer)
+      }
       filterStore.loading = false
     }
   }

@@ -81,3 +81,28 @@ This folder contains the frontend for the project. It is built with Vue, TypeScr
 - Added: `src/views/SavedRoles.vue` - Render saved job cards with the shared JobCard component and an empty-state panel with an Explore Roles link back to Home. <Last Updated: 20/11/2026>
 - Updated: `src/views/Home.vue` - Show a Clear All Filters button when search, sort, or filter controls are active; reset them and hide the button after clearing. <Last Updated: 20/11/2026>
 - Updated: `src/components/Tabs.vue` and `src/mocks/getStaticContent.json` - Remove the duplicate tabs and All Roles link; keep the fresherFriend home link on the left and Saved Roles on the right. <Last Updated: 20/11/2026>
+- Added: `src/components/modals/Error.vue` - Add an accessible error modal with close and retry actions. <Last Updated: 24/11/2026>
+- Updated: `src/App.vue` - Replace plain API error text with the reusable Error modal and reload the page when retry is selected. <Last Updated: 24/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Test error-modal rendering and closing behavior when initial content fails. <Last Updated: 24/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add a static timeout message for prolonged AI-backed startup loading. <Last Updated: 24/11/2026>
+- Updated: `src/composables/useInitialContent.ts` - Expose the API error setter for startup timeout handling. <Last Updated: 24/11/2026>
+- Updated: `src/App.vue` - Show an error popup after startup loading exceeds 10 seconds, including the free-AI capacity message. <Last Updated: 24/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Test the 10-second startup loading timeout popup. <Last Updated: 24/11/2026>
+- Updated: `src/composables/useJobListingApi.ts` - Apply a 10-second timeout specifically to job-listing requests and use the AI capacity message for timeout errors. <Last Updated: 24/11/2026>
+- Updated: `src/App.vue` - Keep the initial-content loading modal visible until that request completes; show the AI capacity popup only after a job-listing timeout. <Last Updated: 24/11/2026>
+- Updated: `src/__tests__/useJobListingApi.spec.ts` and `src/__tests__/App.spec.ts` - Verify the job-listing timeout and that the popup waits for initial content loading to finish. <Last Updated: 24/11/2026>
+- Updated: `src/composables/useFilterOpportunitiesApi.ts` - Apply a 10-second timeout to filter-opportunities requests and use the AI capacity message for timeout errors. <Last Updated: 24/11/2026>
+- Updated: `src/App.vue` - Show the AI capacity popup when the filter-opportunities API request times out. <Last Updated: 24/11/2026>
+- Updated: `src/__tests__/useFilterOpportunitiesApi.spec.ts` and `src/__tests__/App.spec.ts` - Verify filter request timeout handling and popup display. <Last Updated: 24/11/2026>
+- Updated: `src/composables/useJobListingApi.ts` and `src/composables/useFilterOpportunitiesApi.ts` - Replace Axios cancellation timeouts with 10-second slow-request timers that show the AI capacity popup while allowing requests to continue. <Last Updated: 24/11/2026>
+- Updated: `src/__tests__/useJobListingApi.spec.ts`, `src/__tests__/useFilterOpportunitiesApi.spec.ts`, and `src/__tests__/App.spec.ts` - Verify slow requests show the popup without being cancelled and clear it if the request later succeeds. <Last Updated: 24/11/2026>
+- Added: `src/utils/apiError.ts` - Extract API response error messages and map HTTP or upstream status 429 to the rate-limit message. <Last Updated: 24/11/2026>
+- Updated: `src/components/modals/Error.vue` - Support informational slow-request notices without a Retry button and use shared static error content. <Last Updated: 24/11/2026>
+- Updated: `src/App.vue` - Show a no-retry backend-processing notice while requests remain pending; show API failure details with Retry when a request fails. <Last Updated: 24/11/2026>
+- Updated: `src/mocks/getStaticContent.json` - Add slow-request title/description and the rate-limit error message. <Last Updated: 24/11/2026>
+- Updated: `src/composables/useInitialContent.ts`, `src/composables/useJobListingApi.ts`, and `src/composables/useFilterOpportunitiesApi.ts` - Display API-provided failure messages and the shared rate-limit message for status 429. <Last Updated: 24/11/2026>
+- Updated: `src/__tests__/App.spec.ts`, `src/__tests__/useFilterOpportunitiesApi.spec.ts`, and `src/__tests__/useJobListingApi.spec.ts` - Verify API failure messages, 429 handling, Retry visibility, and no-retry slow-request notices. <Last Updated: 24/11/2026>
+- Updated: `src/App.vue` - Request filter opportunities only after job listings succeed. <Last Updated: 24/11/2026>
+- Updated: `src/__tests__/App.spec.ts` - Verify filter opportunities are not requested when job listings fail. <Last Updated: 24/11/2026>
+- Removed: `.github/` - Remove the local Copilot instructions folder; shared instructions are now read from the repository parent folder. <Last Updated: 24/11/2026>
+- Added: `../.github/` - Add centralized Copilot instructions, Vue rules, README rules, and README/test skills at the repository root. <Last Updated: 24/11/2026>
