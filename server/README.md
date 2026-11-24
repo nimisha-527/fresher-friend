@@ -28,3 +28,7 @@ This folder contains the backend API for the project. It is built with Express, 
  - Updated: src/controllers/filterOpportunities.ts - Include distinct roleType values from jobs classified by /job-check-api in filter opportunities <Last Updated: 20/11/2026>
  - Updated: src/api-data/initialContent.json - Remove the tabs array and unused All Roles navigation labels from the initial-content response <Last Updated: 20/11/2026>
  - Updated: ../client/src/views/Home.vue - Request each 20-job page from /jobs-listing without repeating AI processing <Last Updated: 20/11/2026>
+- Updated: src/controllers/filterOpportunities.ts - Return upstream error messages and status information when filter options cannot be fetched. <Last Updated: 24/11/2026>
+- Updated: src/controllers/jobListing.ts - Return upstream error messages and status information when job listings cannot be fetched or classified. <Last Updated: 24/11/2026>
+- Removed: `.github/` - Remove the local Copilot instructions folder; shared instructions are now read from the repository parent folder. <Last Updated: 24/11/2026>
+- Added: `../.github/` - Add centralized Copilot instructions, README rules, and repository-level skills at the repository root. <Last Updated: 24/11/2026>

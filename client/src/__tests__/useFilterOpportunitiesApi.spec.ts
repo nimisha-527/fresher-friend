@@ -28,6 +28,7 @@ describe('useFilterOpportunitiesApi', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
     vi.resetAllMocks()
+    vi.useRealTimers()
     vi.unstubAllEnvs()
     vi.stubEnv('VITE_BACKEND_URL', 'http://api.test/fresherFriend')
   })
@@ -59,6 +60,30 @@ describe('useFilterOpportunitiesApi', () => {
     expect(filterOpportunities.value).toEqual(filterOpportunitiesMock)
   })
 
+  it('shows the AI capacity message after 10 seconds without cancelling the filter request', async () => {
+    vi.stubEnv('VITE_USE_MOCK', 'false')
+    vi.useFakeTimers()
+    let resolveRequest!: (response: AxiosResponse<FilterOpportunities>) => void
+    vi.mocked(axios.get).mockReturnValue(
+      new Promise<AxiosResponse<FilterOpportunities>>((resolve) => {
+        resolveRequest = resolve
+      }),
+    )
+    const { getFilterOpportunities, error } = useFilterOpportunitiesApi()
+    const request = getFilterOpportunities()
+
+    await vi.advanceTimersByTimeAsync(10_000)
+
+    expect(error.value).toBe(
+      'The free AI model is currently experiencing high demand.',
+    )
+
+    resolveRequest(makeResponse(filterOpportunitiesMock))
+    await request
+    expect(error.value).toBeNull()
+    vi.useRealTimers()
+  })
+
   it('exposes filter API errors through the store', async () => {
     vi.stubEnv('VITE_USE_MOCK', 'false')
     vi.mocked(axios.get).mockRejectedValue(new Error('Request failed'))
@@ -70,5 +95,37 @@ describe('useFilterOpportunitiesApi', () => {
     expect(error.value).toBe('Request failed')
     expect(loading.value).toBe(false)
     expect(useFilterOpportunitiesStore().error).toBe('Request failed')
+  })
+
+  it('shows the API response error message when the request fails', async () => {
+    vi.stubEnv('VITE_USE_MOCK', 'false')
+    vi.mocked(axios.get).mockRejectedValue({
+      message: 'Request failed with status code 502',
+      response: {
+        status: 502,
+        data: { error: 'AI service is unavailable', status: 503 },
+      },
+    })
+    const { getFilterOpportunities, error } = useFilterOpportunitiesApi()
+
+    await getFilterOpportunities()
+
+    expect(error.value).toBe('AI service is unavailable')
+  })
+
+  it('uses the rate-limit message when the upstream response status is 429', async () => {
+    vi.stubEnv('VITE_USE_MOCK', 'false')
+    vi.mocked(axios.get).mockRejectedValue({
+      message: 'Request failed with status code 502',
+      response: {
+        status: 502,
+        data: { error: 'Upstream error', status: 429 },
+      },
+    })
+    const { getFilterOpportunities, error } = useFilterOpportunitiesApi()
+
+    await getFilterOpportunities()
+
+    expect(error.value).toBe('Rate limit exceeded. Please try again later.')
   })
 })
